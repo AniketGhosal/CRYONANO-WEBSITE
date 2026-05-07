@@ -410,12 +410,16 @@ export function ImpactSection() {
       {/* ======================================================== */}
       {/* PART 1 & 2: STATS & LOGOS (Dark Premium Theme)           */}
       {/* ======================================================== */}
-      <div className="bg-slate-950 py-20 relative border-y border-slate-800">
+      {/* <div className="bg-slate-950 py-20 relative border-y border-slate-800"> */}
+      <div className="bg-slate-950 py-12 relative border-y border-slate-800">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-800/40 via-slate-950 to-slate-950" />
         
         <div className="container relative z-10">
           {/* Animated Stats Counter */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-20 divide-x divide-slate-800/50">
+          {/* <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-20 divide-x divide-slate-800/50"> */}
+
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12 divide-x divide-slate-800/50">
             {stats.map((stat, idx) => (
               <motion.div 
                 key={idx}
@@ -495,12 +499,21 @@ export function ImpactSection() {
                 <div key={i} className="flex items-center gap-6 shrink-0 w-[20rem] md:w-[24rem] h-28 md:h-32 px-6 md:px-8 rounded-[1.5rem] bg-slate-900/60 border border-slate-700/80 group hover:bg-slate-800 hover:border-slate-500 transition-all duration-500 cursor-default shadow-lg">
                   
                   {/* MUCH LARGER LOGO CONTAINER */}
-                  <div className="h-16 w-20 md:h-20 md:w-28 flex-shrink-0 flex items-center justify-center bg-white/10 p-2 md:p-3 rounded-xl group-hover:bg-white/20 transition-colors duration-500 shadow-inner">
+                  {/* <div className="h-16 w-20 md:h-20 md:w-28 flex-shrink-0 flex items-center justify-center bg-white/10 p-2 md:p-3 rounded-xl group-hover:bg-white/20 transition-colors duration-500 shadow-inner">
                     <img 
                       src={partner.logo} 
                       alt={partner.name}
                       // Base opacity bumped to 90% so it is crystal clear even without hovering
                       className="max-h-full max-w-full object-contain filter grayscale opacity-90 brightness-125 group-hover:grayscale-0 group-hover:opacity-100 group-hover:brightness-100 transition-all duration-500"
+                    />
+                  </div> */}
+
+
+                  <div className="h-16 w-20 md:h-20 md:w-28 flex-shrink-0 flex items-center justify-center bg-white/10 p-2 md:p-3 rounded-xl group-hover:bg-white/20 transition-colors duration-500 shadow-inner">
+                    <img 
+                      src={partner.logo} 
+                      alt={partner.name}
+                      className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                   
@@ -523,12 +536,20 @@ export function ImpactSection() {
                 <div key={i} className="flex items-center gap-6 shrink-0 w-[20rem] md:w-[24rem] h-28 md:h-32 px-6 md:px-8 rounded-[1.5rem] bg-slate-900/60 border border-slate-700/80 group hover:bg-slate-800 hover:border-slate-500 transition-all duration-500 cursor-default shadow-lg">
                   
                   {/* MUCH LARGER LOGO CONTAINER */}
-                  <div className="h-16 w-20 md:h-20 md:w-28 flex-shrink-0 flex items-center justify-center bg-white/10 p-2 md:p-3 rounded-xl group-hover:bg-white/20 transition-colors duration-500 shadow-inner">
+                  {/* <div className="h-16 w-20 md:h-20 md:w-28 flex-shrink-0 flex items-center justify-center bg-white/10 p-2 md:p-3 rounded-xl group-hover:bg-white/20 transition-colors duration-500 shadow-inner">
                     <img 
                       src={partner.logo} 
                       alt={partner.name}
                       // Base opacity bumped to 90% so it is crystal clear even without hovering
                       className="max-h-full max-w-full object-contain filter grayscale opacity-90 brightness-125 group-hover:grayscale-0 group-hover:opacity-100 group-hover:brightness-100 transition-all duration-500"
+                    />
+                  </div> */}
+
+                  <div className="h-16 w-20 md:h-20 md:w-28 flex-shrink-0 flex items-center justify-center bg-white/10 p-2 md:p-3 rounded-xl group-hover:bg-white/20 transition-colors duration-500 shadow-inner">
+                    <img 
+                      src={partner.logo} 
+                      alt={partner.name}
+                      className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                   

@@ -33,10 +33,13 @@
 
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
-import { ProductCategories } from "@/components/ProductCategories";
-import { FeaturedProducts } from "@/components/FeaturedProducts";
+import { WhatWeBuild } from "@/components/WhatWeBuild";
+import { FlagshipProduct } from "../components/FlagshipProduct";
 import { SynergisticStack } from "@/components/SynergisticStack";
+import { ProductCategories } from "@/components/ProductCategories";
+// import { FeaturedProducts } from "@/components/FeaturedProducts";
 import { ImpactSection } from "@/components/ImpactSection";
+import { TestimonialSection } from "@/components/TestimonialSection";
 import { CTASection } from "@/components/CTASection";
 import { Footer } from "@/components/Footer";
 import { PageTransition } from "@/components/PageTransition"; // Added our wrapper
@@ -48,11 +51,15 @@ const Index = () => {
         <Navbar />
         <main>
           <HeroSection />
+          <WhatWeBuild />
+          <FlagshipProduct />
+           <SynergisticStack />
           <ProductCategories />
-          <FeaturedProducts />
+          {/* <FeaturedProducts /> */}
 
-          <SynergisticStack />
+         
           <ImpactSection />
+          <TestimonialSection />
           <CTASection />
         </main>
         <Footer />

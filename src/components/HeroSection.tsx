@@ -273,7 +273,7 @@ export function HeroSection() {
   const [currentMedia, setCurrentMedia] = useState(0);
   const [activeFeature, setActiveFeature] = useState(0); 
   
-  const features = ["Isolated voltage sources", "High-field electromagnets", "Cryogenic control"]; 
+  const features = ["Ultra-low noise systems", "Cryogenic + high-power expertise", "Custom-built engineering"]; 
 
   // 1. Autonomous Image/Product Change Logic (Cycles every 6 seconds)
   useEffect(() => {
@@ -334,20 +334,22 @@ export function HeroSection() {
           </motion.div>
 
           {/* HEADLINE */}
-          <h1 className="font-display text-5xl lg:text-6xl xl:text-7xl font-extrabold text-foreground leading-tight tracking-tighter pb-2">
-            Engineering the Future of{" "}
+          <h1 className="font-display text-3xl lg:text-4xl xl:text-5xl font-extrabold text-foreground leading-tight tracking-tighter pb-2">
+            Precision {" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-600 to-blue-600">
-              Quantum
+               Cryogenic, Quantum 
             </span>{" "}
             &{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-slate-500 to-primary">
-              Cryogenic
-            </span>{" "}
-            Technology
+            {/* <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-slate-500 to-primary">
+              Industrial
+            </span> */}
+            {" "}
+             Industrial Power Systems
           </h1>
           
           <p className="text-lg text-muted-foreground max-w-xl leading-relaxed mt-1">
-            We design and manufacture the mission-critical hardware that modern science depends on—from isolated quantum voltage sources to high-field electromagnets and advanced cryogenic control systems.
+            {/* We design and manufacture the mission-critical hardware that modern science depends on—from isolated quantum voltage sources to high-field electromagnets and advanced cryogenic control systems. */}
+            Engineering mission-critical hardware for advanced research, semiconductor innovation, and defense-grade power applications.
           </p>
           
           {/* CTA BUTTONS */}
