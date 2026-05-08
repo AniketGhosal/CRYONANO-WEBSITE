@@ -207,7 +207,7 @@ export function CTASection() {
 
   return (
     // Pure white section background to contrast with the grey card
-    <section className="relative py-20 lg:py-28 bg-white overflow-hidden border-t border-slate-200">
+    <section className="relative py-10 lg:py-14 bg-white overflow-hidden border-t border-slate-200">
       
       {/* Faint structural grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />

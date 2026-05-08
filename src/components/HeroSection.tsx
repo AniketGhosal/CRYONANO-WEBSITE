@@ -293,7 +293,7 @@ export function HeroSection() {
 
   return (
     // FIX 1: Removed 'border-b border-slate-200' from here to remove the horizontal line
-    <section className="relative bg-background overflow-hidden pt-0 pb-12 lg:pb-20">
+    <section className="relative bg-background overflow-hidden pt-0 pb-8 lg:pb-10">
       
       {/* Ambient Animated Background Glows */}
       <motion.div 
@@ -468,7 +468,7 @@ export function HeroSection() {
       {/* FIX 2 & 3: FULL-WIDTH TRUST STRIP */}
       {/* Moved outside the grid to span horizontally */}
       {/* ============================== */}
-      <div className="container relative z-20 mt-16 lg:mt-5">
+      <div className="container relative z-20 mt-12 lg:mt-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

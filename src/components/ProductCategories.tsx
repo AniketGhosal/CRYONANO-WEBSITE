@@ -83,7 +83,7 @@ export function ProductCategories() {
   }, [autoScroll, manualSpeed]);
 
   return (
-    <section className="relative pt-0 pb-24 bg-background overflow-hidden">
+    <section className="relative pt-0 pb-6 bg-background overflow-hidden">
       
       <div className="container relative z-10">
         <motion.div
@@ -130,7 +130,7 @@ export function ProductCategories() {
           <ChevronRight className="w-8 h-8" />
         </button>
 
-        <div 
+        {/* <div 
           ref={scrollerRef}
           className="flex overflow-x-hidden w-full py-8 [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)] cursor-grab active:cursor-grabbing"
           onMouseEnter={() => setAutoScroll(false)}
@@ -172,7 +172,7 @@ export function ProductCategories() {
                   ))}
                 </div>
 
-                {/* UPDATED: Wrapped in Link, button width adjusted to w-full, Link wrapper takes the w-[80%] mx-auto */}
+                
                 <Link 
                   to="/products" 
                   state={{ filter: cat.filter, category: cat.targetCategory }}
@@ -193,6 +193,98 @@ export function ProductCategories() {
               </div>
             </div>
           ))}
+        </div> */}
+
+
+
+
+
+
+
+        <div 
+          ref={scrollerRef}
+          className="flex overflow-x-hidden w-full py-12 [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)] cursor-grab active:cursor-grabbing"
+          onMouseEnter={() => setAutoScroll(false)}
+          onMouseLeave={() => setAutoScroll(true)} 
+        >
+          {/* UPDATED MAPPING BLOCK: Dynamic Button & Pill Hover Colors */}
+          {[...categories, ...categories].map((cat, i) => {
+            
+            // Array of 5 distinct themes, now including specific hover colors for the Button (btnHover) and Pills (pillHover)
+            const themes = [
+              { bg: "from-blue-50 via-indigo-50/60 to-blue-100", border: "border-blue-200", shadow: "group-hover:shadow-blue-500/25 group-hover:border-blue-400", titleText: "group-hover:text-blue-700", iconRing: "border-blue-300 group-hover:border-blue-500", iconGlow: "from-blue-200 to-transparent group-hover:from-blue-300", pillHover: "group-hover:border-blue-400 group-hover:text-blue-800", btnHover: "group-hover:bg-blue-600 group-hover:shadow-blue-500/30" },
+              { bg: "from-cyan-50 via-sky-50/60 to-cyan-100", border: "border-cyan-200", shadow: "group-hover:shadow-cyan-500/25 group-hover:border-cyan-400", titleText: "group-hover:text-cyan-700", iconRing: "border-cyan-300 group-hover:border-cyan-500", iconGlow: "from-cyan-200 to-transparent group-hover:from-cyan-300", pillHover: "group-hover:border-cyan-400 group-hover:text-cyan-800", btnHover: "group-hover:bg-cyan-600 group-hover:shadow-cyan-500/30" },
+              { bg: "from-emerald-50 via-teal-50/60 to-emerald-100", border: "border-emerald-200", shadow: "group-hover:shadow-emerald-500/25 group-hover:border-emerald-400", titleText: "group-hover:text-emerald-700", iconRing: "border-emerald-300 group-hover:border-emerald-500", iconGlow: "from-emerald-200 to-transparent group-hover:from-emerald-300", pillHover: "group-hover:border-emerald-400 group-hover:text-emerald-800", btnHover: "group-hover:bg-emerald-600 group-hover:shadow-emerald-500/30" },
+              { bg: "from-rose-50 via-pink-50/60 to-rose-100", border: "border-rose-200", shadow: "group-hover:shadow-rose-500/25 group-hover:border-rose-400", titleText: "group-hover:text-rose-700", iconRing: "border-rose-300 group-hover:border-rose-500", iconGlow: "from-rose-200 to-transparent group-hover:from-rose-300", pillHover: "group-hover:border-rose-400 group-hover:text-rose-800", btnHover: "group-hover:bg-rose-600 group-hover:shadow-rose-500/30" },
+              { bg: "from-amber-50 via-orange-50/60 to-amber-100", border: "border-amber-200", shadow: "group-hover:shadow-amber-500/25 group-hover:border-amber-400", titleText: "group-hover:text-amber-700", iconRing: "border-amber-300 group-hover:border-amber-500", iconGlow: "from-amber-200 to-transparent group-hover:from-amber-300", pillHover: "group-hover:border-amber-400 group-hover:text-amber-800", btnHover: "group-hover:bg-amber-600 group-hover:shadow-amber-500/30" },
+            ];
+            
+            const theme = themes[i % 5];
+
+            return (
+              <div 
+                key={i} 
+                className={`group relative w-[380px] shrink-0 mx-4 rounded-[2.5rem] transition-all duration-500 hover:-translate-y-3 shadow-lg ${theme.shadow}`}
+              >
+                {/* Glossy Card Body */}
+                <div className={`relative h-full rounded-[2.5rem] p-8 flex flex-col items-center text-center z-10 border-2 bg-gradient-to-br overflow-hidden transition-colors duration-500 ${theme.bg} ${theme.border}`}>
+                  
+                  {/* Glass Reflection Highlight */}
+                  <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white/80 to-transparent pointer-events-none" />
+                  
+                  {/* Icon Setup */}
+                  <div className="relative w-24 h-24 mb-6 flex items-center justify-center z-10">
+                    <div className={`absolute inset-0 border-2 border-dashed rounded-full animate-[spin_8s_linear_infinite] transition-colors duration-500 ${theme.iconRing}`} />
+                    <div className={`absolute inset-3 bg-gradient-to-br rounded-full animate-pulse transition-colors duration-500 ${theme.iconGlow}`} />
+                    <div className="relative w-12 h-12 bg-white border border-white/80 rounded-xl flex items-center justify-center shadow-lg z-10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                      <cat.icon className="w-6 h-6 text-slate-800" />
+                    </div>
+                  </div>
+                  
+                  {/* Title & Description */}
+                  <h3 className={`font-display text-2xl font-extrabold text-slate-900 mb-4 transition-colors duration-300 relative z-10 ${theme.titleText}`}>
+                    {cat.title}
+                  </h3>
+                  <p className="text-slate-600 font-medium leading-relaxed mb-8 flex-grow text-[15px] px-2 relative z-10">
+                    {cat.description}
+                  </p>
+
+                  {/* Product Pills - Now inherit theme border and text color on hover */}
+                  <div className="flex flex-wrap justify-center gap-2 mb-10 relative z-10">
+                    {cat.products.map((p) => (
+                      <span 
+                        key={p} 
+                        className={`text-[11px] uppercase tracking-wider bg-white/60 backdrop-blur-sm border border-white/80 text-slate-700 px-3 py-1.5 rounded-full font-extrabold shadow-sm group-hover:bg-white transition-colors duration-300 ${theme.pillHover}`}
+                      >
+                        {p}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Button & Link - Now inherits dense theme background on card hover */}
+                  <Link 
+                    to="/products" 
+                    state={{ filter: cat.filter, category: cat.targetCategory }}
+                    className="mt-auto w-[85%] mx-auto block relative z-10"
+                  >
+                    {/* The base color is slate-900, but theme.btnHover overrides it to the vibrant dense color immediately when the card is hovered */}
+                    <button className={`group/btn w-full py-4 rounded-2xl font-bold text-white bg-slate-900 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 flex items-center justify-center gap-3 overflow-hidden relative ${theme.btnHover}`}>
+                      <span className="relative z-10 flex items-center gap-2 text-[14px] tracking-wide">
+                        Explore Division <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1.5 transition-transform duration-300" />
+                      </span>
+                      {/* Button Gloss Sweep */}
+                      <motion.div 
+                        animate={{ x: ["-100%", "200%"] }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 z-0"
+                      />
+                    </button>
+                  </Link>
+
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

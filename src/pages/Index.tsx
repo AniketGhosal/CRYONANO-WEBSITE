@@ -33,9 +33,9 @@
 
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
-import { WhatWeBuild } from "@/components/WhatWeBuild";
-import { FlagshipProduct } from "../components/FlagshipProduct";
+// import { WhatWeBuild } from "@/components/WhatWeBuild";
 import { SynergisticStack } from "@/components/SynergisticStack";
+import { FlagshipProduct } from "../components/FlagshipProduct";
 import { ProductCategories } from "@/components/ProductCategories";
 // import { FeaturedProducts } from "@/components/FeaturedProducts";
 import { ImpactSection } from "@/components/ImpactSection";
@@ -51,9 +51,9 @@ const Index = () => {
         <Navbar />
         <main>
           <HeroSection />
-          <WhatWeBuild />
+          {/* <WhatWeBuild /> */}
+          <SynergisticStack />
           <FlagshipProduct />
-           <SynergisticStack />
           <ProductCategories />
           {/* <FeaturedProducts /> */}
 

@@ -2,7 +2,6 @@
 // import { ChevronDown, Menu, X, Search } from "lucide-react";
 // import { motion, AnimatePresence } from "framer-motion";
 // import { Link, useLocation } from "react-router-dom";
-// import { NavAboutUs } from "@/components/navbar/NavAboutUs";
 
 // // FULLY RESTORED MEGA MENU DATA
 // const productCategories = [
@@ -67,24 +66,37 @@
 //   },
 // ];
 
-// // const navLinks = [
-// //   { label: "Products", href: "/products", dropdown: "products" },
-// //   { label: "Solutions", dropdown: "solutions" },
-// //   { label: "Service & Support", href: "/support" },
-// //   { label: "About Us", href: "/about" }, 
-// //   { label: "Contact", href: "/contact" },
-// // ];
+// // NEW HORIZONTAL DATA FOR "ABOUT US"
+// const aboutCategories = [
+//   { name: "Cryonano at a Glance", path: "/about/our-story" },
+//   { name: "Founders & Leadership", path: "/about/leadership" },
+//   { name: "Research & Technology", path: "/research/overview" },
+//   { name: "Innovation & Patents", path: "/research/innovation" },
+//   { name: "R&D & Manufacturing", path: "/research/rnd-manufacturing" },
+//   { name: "Quality & Compliance", path: "/about/quality" },
+//   { name: "News & Press", path: "/contact/media" }
+// ];
 
+
+// const knowledgeCategories = [
+//   {
+//     title: "Knowledge Base",
+//     items: [
+//       { name: "Download Resources", path: "/knowledge-bank/downloads" },
+//       { name: "Archived Products", path: "/knowledge-bank/archives" },
+//       { name: "Application Notes", path: "/knowledge-bank/application-notes" },
+//     ],
+//   },
+// ];
 
 // const navLinks = [
-//   { label: "Products", href: "/products", dropdown: "products" },
-//   { label: "Solutions", dropdown: "solutions" },
-//   { label: "Service & Support", href: "/support" },
-//   { label: "About Us", href: "/about", dropdown: "about" }, // <--- ADDED dropdown property
+//   { label: "Research", href: "/products", dropdown: "products" },
+//   { label: "Industry", dropdown: "solutions" },
+//   { label: "Knowledge Bank", dropdown: "knowledge" },
+//   { label: "About Us", href: "/about", dropdown: "about" }, 
 //   { label: "Contact", href: "/contact" },
 // ];
 
-// // Helper function to check if the current URL exists in a specific category array
 // const isPathInCategories = (categories: any[], currentPath: string) => {
 //   return categories.some(cat => cat.items.some((item: any) => item.path === currentPath));
 // };
@@ -98,7 +110,6 @@
 
 //   return (
 //     <>
-//       {/* Top utility bar - Light theme */}
 //       <div className="bg-slate-100 text-slate-600 text-xs relative z-[60]">
 //         <div className="container flex items-center justify-end gap-8 py-2.5">
 //           {["Global", "Careers", "Contact"].map((item) => (
@@ -114,11 +125,10 @@
 //         </div>
 //       </div>
 
-//       {/* Main nav - Distinct Grey Theme */}
-//       <nav className="sticky top-0 z-50 bg-slate-100/95 backdrop-blur-md border-b border-slate-300 shadow-md">
+//       {/* Main nav */}
+//       <nav className="sticky top-0 z-50 bg-slate-100/95 backdrop-blur-md border-b border-slate-300 shadow-md relative">
 //         <div className="container flex items-center justify-between h-[var(--nav-height)] py-4">
           
-//           {/* Logo */}
 //           <Link to="/" className="flex flex-col items-start justify-center cursor-pointer group">
 //             <div className="flex gap-1.5 mb-0.5">
 //               {[0, 1, 2].map((i) => (
@@ -139,17 +149,32 @@
 //           <div className="hidden lg:flex items-center gap-1 xl:gap-4">
 //             {navLinks.map((link) => {
               
-//               // NEW: Intelligent Active State Logic
+//               // FIXED ACTIVE STATE LOGIC
 //               let isActive = false;
 //               if (location.pathname === link.href) {
-//                  isActive = true; // Exact match (e.g. /products, /contact)
-//               } else if (link.dropdown === "products") {
-//                  isActive = isPathInCategories(productCategories, location.pathname);
-//               } else if (link.dropdown === "solutions") {
-//                  isActive = isPathInCategories(powerCategories, location.pathname);
-//               } else if (link.dropdown) {
-//                  isActive = location.pathname.startsWith(`/${link.dropdown}`);
-//               }
+//                  isActive = true; 
+//               } else if (link.dropdown && location.pathname !== "/contact") {
+//                  // The above condition prevents dropdowns from highlighting when on the Contact page
+//               //    if (link.dropdown === "products") {
+//               //       isActive = isPathInCategories(productCategories, location.pathname);
+//               //    } else if (link.dropdown === "solutions") {
+//               //       isActive = isPathInCategories(powerCategories, location.pathname);
+//               //    } else if (link.dropdown === "about") {
+//               //       isActive = aboutCategories.some(cat => cat.path === location.pathname);
+//               //    }
+//               // }
+
+
+
+//               if (link.dropdown === "products") {
+//                     isActive = isPathInCategories(productCategories, location.pathname);
+//                  } else if (link.dropdown === "solutions") {
+//                     isActive = isPathInCategories(powerCategories, location.pathname);
+//                  } else if (link.dropdown === "knowledge") {
+//                     isActive = isPathInCategories(knowledgeCategories, location.pathname); // Added for Knowledge Bank
+//                  } else if (link.dropdown === "about") {
+//                     isActive = aboutCategories.some(cat => cat.path === location.pathname);
+//                  }
 
 //               return (
 //                 <div
@@ -176,9 +201,9 @@
 //                     </Link>
 //                   </motion.div>
 
-//                   {/* Mega dropdown */}
+//                   {/* Mega dropdown for Products & Solutions ONLY */}
 //                   <AnimatePresence>
-//                     {link.dropdown && openDropdown === link.dropdown && (
+//                     {link.dropdown && link.dropdown !== "about" && openDropdown === link.dropdown && (
 //                       <motion.div
 //                         initial={{ opacity: 0, y: 10 }}
 //                         animate={{ opacity: 1, y: 0 }}
@@ -217,7 +242,6 @@
 //             })}
 //           </div>
 
-//           {/* Right actions */}
 //           <div className="flex items-center gap-3 relative">
 //             <div 
 //               className="flex items-center"
@@ -259,6 +283,42 @@
 //           </div>
 //         </div>
 
+//         {/* NEW FULL-WIDTH HORIZONTAL BAR FOR "ABOUT US" */}
+//         <AnimatePresence>
+//           {openDropdown === "about" && (
+//             <motion.div
+//               initial={{ height: 0, opacity: 0 }}
+//               animate={{ height: "auto", opacity: 1 }}
+//               exit={{ height: 0, opacity: 0 }}
+//               transition={{ duration: 0.3, ease: "easeInOut" }}
+//               className="absolute top-full left-0 right-0 w-full bg-white border-b border-slate-200 shadow-xl overflow-hidden z-[100]"
+//               onMouseEnter={() => setOpenDropdown("about")}
+//               onMouseLeave={() => setOpenDropdown(null)}
+//             >
+//               <div className="container flex items-center justify-center gap-8 py-5 flex-wrap">
+//                 {aboutCategories.map((item) => (
+//                   <motion.div
+//                     key={item.name}
+//                     initial={{ opacity: 0, y: -5 }}
+//                     animate={{ opacity: 1, y: 0 }}
+//                     exit={{ opacity: 0, y: -5 }}
+//                     transition={{ duration: 0.2 }}
+//                   >
+//                     <Link
+//                       to={item.path}
+//                       onClick={() => setOpenDropdown(null)}
+//                       className="text-sm font-extrabold text-slate-600 hover:text-primary transition-colors tracking-wide relative after:absolute after:-bottom-1.5 after:left-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all after:duration-300"
+//                     >
+//                       {item.name}
+//                     </Link>
+//                   </motion.div>
+//                 ))}
+//               </div>
+//               <div className="w-full h-1 bg-gradient-to-r from-primary via-cyan-400 to-blue-500 opacity-80" />
+//             </motion.div>
+//           )}
+//         </AnimatePresence>
+
 //         {/* Mobile menu */}
 //         <AnimatePresence>
 //           {mobileOpen && (
@@ -266,20 +326,21 @@
 //               initial={{ height: 0, opacity: 0 }}
 //               animate={{ height: "auto", opacity: 1 }}
 //               exit={{ height: 0, opacity: 0 }}
-//               className="lg:hidden overflow-hidden border-t border-slate-300 bg-slate-100 shadow-inner"
+//               className="lg:hidden overflow-hidden border-t border-slate-300 bg-slate-100 shadow-inner absolute top-full left-0 w-full z-[100]"
 //             >
 //               <div className="container py-4 space-y-2">
 //                 {navLinks.map((link) => {
-//                   // Reuse same logic for mobile
 //                   let isActive = false;
 //                   if (location.pathname === link.href) {
 //                      isActive = true;
-//                   } else if (link.dropdown === "products") {
-//                      isActive = isPathInCategories(productCategories, location.pathname);
-//                   } else if (link.dropdown === "solutions") {
-//                      isActive = isPathInCategories(powerCategories, location.pathname);
-//                   } else if (link.dropdown) {
-//                      isActive = location.pathname.startsWith(`/${link.dropdown}`);
+//                   } else if (link.dropdown && location.pathname !== "/contact") {
+//                      if (link.dropdown === "products") {
+//                         isActive = isPathInCategories(productCategories, location.pathname);
+//                      } else if (link.dropdown === "solutions") {
+//                         isActive = isPathInCategories(powerCategories, location.pathname);
+//                      } else if (link.dropdown === "about") {
+//                         isActive = aboutCategories.some(cat => cat.path === location.pathname);
+//                      }
 //                   }
                   
 //                   return (
@@ -301,6 +362,15 @@
 //     </>
 //   );
 // }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -390,10 +460,22 @@ const aboutCategories = [
   { name: "News & Press", path: "/contact/media" }
 ];
 
+// NEW DATA FOR KNOWLEDGE BANK
+const knowledgeCategories = [
+  {
+    title: "",
+    items: [
+      { name: "Downloads", path: "/knowledge-bank/downloads" },
+      { name: "Archived Products", path: "/knowledge-bank/archives" },
+      { name: "Application Notes", path: "/knowledge-bank/application-notes" },
+    ],
+  },
+];
+
 const navLinks = [
-  { label: "Products", href: "/products", dropdown: "products" },
-  { label: "Solutions", dropdown: "solutions" },
-  { label: "Service & Support", href: "/support" },
+  { label: "Research", href: "/products", dropdown: "products" },
+  { label: "Industry", dropdown: "solutions" },
+  { label: "Knowledge Bank", dropdown: "knowledge" },
   { label: "About Us", href: "/about", dropdown: "about" }, 
   { label: "Contact", href: "/contact" },
 ];
@@ -427,7 +509,9 @@ export function Navbar() {
       </div>
 
       {/* Main nav */}
-      <nav className="sticky top-0 z-50 bg-slate-100/95 backdrop-blur-md border-b border-slate-300 shadow-md relative">
+      {/* <nav className="sticky top-0 z-50 bg-slate-100/95 backdrop-blur-md border-b border-slate-300 shadow-md relative"> */}
+
+      <nav className="sticky top-0 z-50 bg-slate-100/95 backdrop-blur-md border-b border-slate-300 shadow-md">
         <div className="container flex items-center justify-between h-[var(--nav-height)] py-4">
           
           <Link to="/" className="flex flex-col items-start justify-center cursor-pointer group">
@@ -460,6 +544,8 @@ export function Navbar() {
                     isActive = isPathInCategories(productCategories, location.pathname);
                  } else if (link.dropdown === "solutions") {
                     isActive = isPathInCategories(powerCategories, location.pathname);
+                 } else if (link.dropdown === "knowledge") {
+                    isActive = isPathInCategories(knowledgeCategories, location.pathname);
                  } else if (link.dropdown === "about") {
                     isActive = aboutCategories.some(cat => cat.path === location.pathname);
                  }
@@ -490,7 +576,7 @@ export function Navbar() {
                     </Link>
                   </motion.div>
 
-                  {/* Mega dropdown for Products & Solutions ONLY */}
+                  {/* Mega dropdown for Products, Solutions & Knowledge */}
                   <AnimatePresence>
                     {link.dropdown && link.dropdown !== "about" && openDropdown === link.dropdown && (
                       <motion.div
@@ -498,14 +584,31 @@ export function Navbar() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 10 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute top-full left-0 mt-2 bg-white border border-slate-200 shadow-2xl rounded-2xl min-w-[700px] p-8 z-[100]"
+                        // Dynamic width: wide for Products/Solutions, narrow (350px) for Knowledge
+                        className={`absolute top-full left-0 mt-2 bg-white border border-slate-200 shadow-2xl rounded-2xl p-6 z-[100] ${link.dropdown === "knowledge" ? "min-w-[200px]" : "min-w-[700px]"}`}
                       >
-                        <div className={`grid gap-8 ${link.dropdown === "products" ? "grid-cols-4" : "grid-cols-3"}`}>
-                          {(link.dropdown === "products" ? productCategories : powerCategories).map((cat) => (
+                        {/* Dynamic columns: 4 for Products, 3 for Solutions, 1 for Knowledge */}
+                        <div className={`grid gap-8 ${link.dropdown === "products" ? "grid-cols-4" : link.dropdown === "solutions" ? "grid-cols-3" : "grid-cols-1"}`}>
+                          
+                          {/* Choose the correct array based on the hovered link */}
+                          {/* {(link.dropdown === "products" ? productCategories : link.dropdown === "solutions" ? powerCategories : knowledgeCategories).map((cat) => (
                             <div key={cat.title}>
                               <h4 className="font-display font-bold text-sm text-primary uppercase tracking-wider mb-4 pb-2 border-b border-slate-200">
                                 {cat.title}
                               </h4>
+                              <ul className="space-y-3"> */}
+
+
+
+
+                              {(link.dropdown === "products" ? productCategories : link.dropdown === "solutions" ? powerCategories : knowledgeCategories).map((cat, idx) => (
+                            <div key={cat.title || idx}>
+                              {/* Conditionally render the heading ONLY if there is text in the title */}
+                              {cat.title && (
+                                <h4 className="font-display font-bold text-sm text-primary uppercase tracking-wider mb-4 pb-2 border-b border-slate-200">
+                                  {cat.title}
+                                </h4>
+                              )}
                               <ul className="space-y-3">
                                 {cat.items.map((item: any) => (
                                   <motion.li 
@@ -627,6 +730,8 @@ export function Navbar() {
                         isActive = isPathInCategories(productCategories, location.pathname);
                      } else if (link.dropdown === "solutions") {
                         isActive = isPathInCategories(powerCategories, location.pathname);
+                     } else if (link.dropdown === "knowledge") {
+                        isActive = isPathInCategories(knowledgeCategories, location.pathname);
                      } else if (link.dropdown === "about") {
                         isActive = aboutCategories.some(cat => cat.path === location.pathname);
                      }

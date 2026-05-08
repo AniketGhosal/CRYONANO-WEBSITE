@@ -176,7 +176,7 @@ const testimonials = [
 
 export function TestimonialSection() {
   return (
-    <section className="relative py-24 bg-slate-50 overflow-hidden border-t border-slate-200">
+    <section className="relative py-10 bg-slate-50 overflow-hidden border-t border-slate-200">
       
       {/* Background Ambient Glows */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-64 bg-blue-100/50 blur-[100px] rounded-full pointer-events-none" />
@@ -266,7 +266,7 @@ export function TestimonialSection() {
               </div>
 
               {/* Testimonial Text */}
-              <p className="text-slate-700 font-medium leading-relaxed flex-grow relative z-10 italic">
+              <p className="text-slate-700 font-large font-4xl leading-relaxed flex-grow relative z-10 italic">
                 "{testimonial.text}"
               </p>
 

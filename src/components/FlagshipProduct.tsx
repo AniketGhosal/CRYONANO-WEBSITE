@@ -45,9 +45,41 @@ export function FlagshipProduct() {
 
 
 
-    <section className="pt-2 pb-20 lg:pt-4 lg:pb-28 bg-white relative overflow-hidden">
+    // <section className="pt-2 pb-20 lg:pt-4 lg:pb-28 bg-white relative overflow-hidden">
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1400px] relative z-10">
+    //   <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1400px] relative z-10">
+
+    
+
+    <section className="pt-20 pb-24 lg:pt-10 lg:pb-10 relative overflow-hidden bg-white border-none group">
+      
+      {/* THE FIX: Radial Mask
+        This creates the "blue in the middle, white on the margins" effect. 
+        It fades to completely transparent well before touching the top, bottom, left, or right edges.
+        Because the base section is bg-white, the edges will be pure white, eliminating ALL horizontal lines!
+      */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden [mask-image:radial-gradient(ellipse_at_center,white_30%,transparent_75%)]">
+        
+        {/* Solid Blue Base behind the content in the center */}
+        <div className="absolute inset-0 bg-blue-50/80" />
+
+        {/* Sky Blue - Deeper Shade (Center-Left) */}
+        <motion.div 
+          animate={{ x: [0, 50, 0], y: [0, -30, 0] }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-[5%] left-[5%] w-[60vw] h-[60vw] max-w-[900px] max-h-[900px] rounded-full bg-blue-400/30 blur-[120px] group-hover:bg-blue-400/40 transition-colors duration-1000" 
+        />
+        
+        {/* Sky Blue - Lighter Shade (Center-Right) */}
+        <motion.div 
+          animate={{ x: [0, -50, 0], y: [0, 30, 0] }}
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute bottom-[5%] right-[5%] w-[50vw] h-[50vw] max-w-[700px] max-h-[700px] rounded-full bg-sky-300/30 blur-[120px] group-hover:bg-sky-300/40 transition-colors duration-1000" 
+        />
+        
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1400px] relative z-20">
         
         {/* SECTION HEADER */}
         <div className="text-center max-w-4xl mx-auto mb-16 flex flex-col items-center">
@@ -66,7 +98,7 @@ export function FlagshipProduct() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight"
+            className="font-display text-4xl md:text-5xl lg:text-5xl font-extrabold text-slate-900 tracking-tight"
           >
             Redefining Precision with the <br className="hidden lg:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600">

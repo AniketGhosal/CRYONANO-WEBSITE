@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import animate from "tailwindcss-animate";
 
 export default {
   darkMode: ["class"],
@@ -13,9 +14,19 @@ export default {
       },
     },
     extend: {
+      // fontFamily: {
+      //   // 'sans' controls all standard body content (Matches the Dropdown List image)
+      //   sans: ["Roboto", "Arial", "Helvetica", "sans-serif"],
+        
+      //   // 'display' controls all Titles and Headings (Matches the Teledyne image)
+      //   display: ["Times New Roman", "Merriweather", "Georgia", "serif"],
+      // },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Space Grotesk", "system-ui", "sans-serif"],
+        // 'sans' controls all standard body content (Matches the Dropdown List / Everywhereyoulook)
+        sans: ["Roboto", "Arial", "Helvetica", "sans-serif"],
+        
+        // 'display' controls all Titles and Headings (Matches the tall, blocky "TELEDYNE" text)
+        display: ["Oswald", "Impact", "Arial Narrow", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -82,6 +93,9 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
-  },
-  plugins: [require("tailwindcss-animate")],
+//   },
+//   plugins: [require("tailwindcss-animate")],
+// } satisfies Config;
+},
+  plugins: [animate], // <-- Use the imported variable instead of require()
 } satisfies Config;

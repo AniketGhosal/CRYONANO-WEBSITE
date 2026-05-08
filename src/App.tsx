@@ -102,6 +102,8 @@ import Inverter400HzPage from "./pages/Inverter400HzPage";
 import ContactPage from "./pages/ContactPage";
 import ServiceSupportPage from "./pages/ServiceSupportPage";
 import RequestQuotePage from "./pages/RequestQuotePage";
+import ResearchPublicationsPage from "./pages/ResearchPublicationsPage";
+import { ArchivedProductsPage } from './pages/ArchivedProductsPage'; // Adjust path if needed
 
 const queryClient = new QueryClient();
 
@@ -136,6 +138,8 @@ const AnimatedRoutes = () => {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/support" element={<ServiceSupportPage />} />
         <Route path="/request-quote" element={<RequestQuotePage />} />
+        <Route path="/about/research-publications" element={<ResearchPublicationsPage />} />
+        <Route path="/knowledge-bank/archives" element={<ArchivedProductsPage />} />
         
 
         {/* === DYNAMIC FALLBACK ROUTE === */}

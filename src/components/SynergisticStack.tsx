@@ -477,19 +477,23 @@ function StackProductItem({ prod, theme }: { prod: any, theme: any }) {
 }
 
 // --- MAIN COMPONENT ---
+// export function SynergisticStack() {
+//   const [activeIndex, setActiveIndex] = useState(0);
+
+//   // Autonomous Cycle Logic
+//   useEffect(() => {
+//     const timer = setInterval(() => {
+//       setActiveIndex((prev) => (prev + 1) % workflowSteps.length);
+//     }, 6000); 
+//     return () => clearInterval(timer);
+//   }, []);
+
+//   return (
 export function SynergisticStack() {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // Autonomous Cycle Logic
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % workflowSteps.length);
-    }, 6000); 
-    return () => clearInterval(timer);
-  }, []);
-
   return (
-    <section className="relative py-20 lg:py-24 bg-white overflow-hidden border-t border-slate-200">
+    <section className="relative py-0.5 lg:py-0.5 bg-white overflow-hidden ">
       <div className="container relative z-10">
         
         {/* Global Header Section */}
@@ -512,7 +516,7 @@ export function SynergisticStack() {
             className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-[12px] font-extrabold tracking-widest uppercase mb-6 shadow-[0_0_20px_rgba(59,130,246,0.15)]"
           >
             <span className="w-2.5 h-2.5 rounded-full bg-blue-600 shadow-[0_0_10px_rgba(37,99,235,0.8)] animate-pulse" />
-            Complete Lab Ecosystem
+            Quantum Research Ecosystem
           </motion.div>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
