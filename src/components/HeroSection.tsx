@@ -334,9 +334,12 @@ export function HeroSection() {
           </motion.div>
 
           {/* HEADLINE */}
-          <h1 className="font-display text-3xl lg:text-4xl xl:text-5xl font-extrabold text-foreground leading-tight tracking-tighter pb-2">
+          <h1 className="font-display text-3xl lg:text-4xl xl:text-5xl font-extrabold text-foreground leading-tight tracking-normal pb-2">
             Precision {" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-600 to-blue-600">
+            {/* <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-600 to-blue-600"> */}
+
+            
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600">
                Cryogenic, Quantum 
             </span>{" "}
             &{" "}

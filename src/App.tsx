@@ -103,7 +103,8 @@ import ContactPage from "./pages/ContactPage";
 import ServiceSupportPage from "./pages/ServiceSupportPage";
 import RequestQuotePage from "./pages/RequestQuotePage";
 import ResearchPublicationsPage from "./pages/ResearchPublicationsPage";
-import { ArchivedProductsPage } from './pages/ArchivedProductsPage'; // Adjust path if needed
+import { ArchivedProductsPage } from './pages/ArchivedProductsPage'; 
+import { ApplicationNotesPage } from './pages/ApplicationNotesPage'; 
 
 const queryClient = new QueryClient();
 
@@ -140,7 +141,7 @@ const AnimatedRoutes = () => {
         <Route path="/request-quote" element={<RequestQuotePage />} />
         <Route path="/about/research-publications" element={<ResearchPublicationsPage />} />
         <Route path="/knowledge-bank/archives" element={<ArchivedProductsPage />} />
-        
+        <Route path="/knowledge-bank/application-notes" element={<ApplicationNotesPage />} />
 
         {/* === DYNAMIC FALLBACK ROUTE === */}
         {/* CRITICAL FIX: Moved to the very bottom so it doesn't intercept the specific routes above! */}

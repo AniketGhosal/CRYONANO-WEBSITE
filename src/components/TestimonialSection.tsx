@@ -162,7 +162,7 @@ const testimonials = [
     role: "Assistant Prof. Material Science  IIT Kharagpur",
     image: "/logos/Capture.PNG", 
     text: "We have been able to fabricate a lot of 2D hetreostructures with good precision and control using the 2D Transfer System by Cryonano. The fine angle adjustment has also been very helpful in making twisted bilayers of graphene and various other TMDCs. The temperature control is also good and optics is top class. The visualization of the flakes during the transfer is excellent and hence we are able to fabricate 2D heterostructures with high degree of precision. Recently a journal article has been published in Journal of Applied Physics. 2023;133(11). Where Cryonano transfer system was used to make heterostructures.",
-    rating: 5,
+    // rating: 5,
   },
   {
     id: 2,
@@ -170,7 +170,7 @@ const testimonials = [
     role: "Associate Prof, Saha Institute of Nuclear Physics, India",
     image: "/logos/Capture2.PNG", 
     text: "We have been using the 16-bit digital to analog isolated voltage source (IVS) from Cryonano for quite sometime now and it has become a mainstay for our lab. It has four truly bipolar +/- 10 V output that is controlled by Labview. We are extensively using the IVS for our ongoing research work for mainly Gate Voltage Control of our multi-terminal quantum hall Systems, Gate Voltage Control on graphene devices and I-V spectroscopy of fractional quantum hall systems.. We have carried out several experiments and published two papers (Phys. Rev. Lett. 125, 076802 – Published 12 August 2020; Phys. Rev. B 104, 085304 – Published 9 August 2021).",
-    rating: 5,
+    // rating: 5,
   }
 ];
 
@@ -259,14 +259,14 @@ export function TestimonialSection() {
               </div>
 
               {/* Star Rating */}
-              <div className="flex justify-center gap-1 mb-6 relative z-10">
+              {/* <div className="flex justify-center gap-1 mb-6 relative z-10">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
                 ))}
-              </div>
+              </div> */}
 
               {/* Testimonial Text */}
-              <p className="text-slate-700 font-large font-4xl leading-relaxed flex-grow relative z-10 italic">
+              <p className="text-slate-700 font-large leading-relaxed flex-grow relative z-10 italic">
                 "{testimonial.text}"
               </p>
 
