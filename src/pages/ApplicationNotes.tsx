@@ -265,5 +265,4 @@ const ApplicationNotes = () => {
     </div>
   );
 };
-
 export default ApplicationNotes;

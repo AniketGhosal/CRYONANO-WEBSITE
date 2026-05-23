@@ -80,7 +80,7 @@ import { AnimatePresence } from "framer-motion";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Products from "./pages/Products";
-import ProductDetail from "./pages/ProductDetail";
+// import ProductDetail from "./pages/ProductDetail";
 import CryoConnectBreakoutBoxPage from "./pages/CryoConnectBreakoutBox";
 import CryoCleanFiltersPage from "./pages/CryoCleanFiltersPage";
 import CryogenicNanoStagePage from "./pages/CryogenicNanoStagePage";
@@ -105,6 +105,7 @@ import RequestQuotePage from "./pages/RequestQuotePage";
 import ResearchPublicationsPage from "./pages/ResearchPublicationsPage";
 import { ArchivedProductsPage } from './pages/ArchivedProductsPage'; 
 import { ApplicationNotesPage } from './pages/ApplicationNotesPage'; 
+import QuantumVoltPage from "./pages/QuantumVoltPage";
 
 const queryClient = new QueryClient();
 
@@ -118,6 +119,7 @@ const AnimatedRoutes = () => {
         <Route path="/products" element={<Products />} />
         
         {/* === SPECIFIC PRODUCT ROUTES === */}
+        <Route path="/products/quantum-volt" element={<QuantumVoltPage />} />
         <Route path="/products/breakout-box" element={<CryoConnectBreakoutBoxPage />} />
         <Route path="/products/cryo-clean" element={<CryoCleanFiltersPage />} />
         <Route path="/products/nano-stage" element={<CryogenicNanoStagePage />} />
@@ -145,7 +147,7 @@ const AnimatedRoutes = () => {
 
         {/* === DYNAMIC FALLBACK ROUTE === */}
         {/* CRITICAL FIX: Moved to the very bottom so it doesn't intercept the specific routes above! */}
-        <Route path="/products/:slug" element={<ProductDetail />} />
+        {/* <Route path="/products/:slug" element={<ProductDetail />} /> */}
       </Routes>
     </AnimatePresence>
   );

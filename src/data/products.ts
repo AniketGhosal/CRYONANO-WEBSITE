@@ -9,51 +9,155 @@ import {
 } from "lucide-react";
 
 export const productsData: Record<string, any> = {
+  // "quantum-volt": {
+  //   category: "Quantum Hardware",
+  //   name: "QuantumVolt™",
+  //   subtitle: "Precision Isolated Voltage Source",
+  //   heroImage: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=1200&auto=format&fit=crop",
+  //   gallery: [
+  //     "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop",
+  //     "https://images.unsplash.com/photo-1581092335397-9583eb92d232?q=80&w=800&auto=format&fit=crop"
+  //   ],
+  //   overview: [
+  //     "QuantumVolt™ is an ultra-low-noise, isolated voltage source designed specifically for nanoelectronics, quantum transport, and quantum computing experiments.",
+  //     "It delivers stable, precise gate and bias control through fully isolated bipolar outputs. This architecture enables reproducible tuning of sensitive quantum devices without introducing electrical noise or ground loops, which are critical points of failure in millikelvin environments."
+  //   ],
+  //   features: [
+  //     { icon: Cpu, title: "Four Isolated Bipolar Outputs", description: "Each channel provides ±10 V independently, stackable to ±40 V for highly flexible gate control." },
+  //     { icon: Activity, title: "16-Bit DAC Resolution", description: "High-resolution digital-to-analog conversion enables exceptionally fine voltage steps and smooth continuous sweeps." },
+  //     { icon: Shield, title: "Ultra-Low Noise Architecture", description: "Optimized analog design with linear regulation minimizes output noise to preserve fragile quantum states." },
+  //     { icon: Settings, title: "Native Automation", description: "Out-of-the-box LabVIEW and Python support enables seamless integration with existing automated measurement workflows." },
+  //   ],
+  //   specs: {
+  //     "Output Configuration": "4 Isolated Bipolar Channels",
+  //     "Voltage Range per Channel": "±10 V (Stackable to ±40 V)",
+  //     "Resolution": "16-Bit DAC (~300 µV steps)",
+  //     "Output Noise (0.1 Hz to 10 Hz)": "< 2 µV peak-to-peak",
+  //     "Temperature Coefficient": "< 5 ppm/°C",
+  //     "Isolation": "> 10 GΩ channel-to-channel",
+  //     "Interface": "USB 2.0 / Native Python & LabVIEW",
+  //     "Power Supply": "100-240 VAC, 50/60 Hz"
+  //   },
+  //   performanceData: {
+  //     title: "Output Noise Spectral Density",
+  //     description: "Comparative noise floor vs standard SMU equipment.",
+  //     metrics: [
+  //       { label: "1 Hz", value: 8, max: 100, unit: "nV/√Hz" },
+  //       { label: "10 Hz", value: 5, max: 100, unit: "nV/√Hz" },
+  //       { label: "100 Hz", value: 3, max: 100, unit: "nV/√Hz" },
+  //       { label: "1 kHz", value: 2, max: 100, unit: "nV/√Hz" },
+  //     ]
+  //   },
+  //   applications: [
+  //     "Quantum Transport Experiments",
+  //     "2D Material Devices (Graphene, hBN)",
+  //     "Superconducting Qubits",
+  //     "Spintronics Research",
+  //     "Cryogenic Device Characterization"
+  //   ]
+  // },
+
+
+
   "quantum-volt": {
     category: "Quantum Hardware",
-    name: "QuantumVolt™",
-    subtitle: "Precision Isolated Voltage Source",
-    heroImage: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=1200&auto=format&fit=crop",
+    name: "QuantumVolt™ Isolated Voltage Source",
+    subtitle: "Ultra-low-noise precision gate and bias control platform for quantum transport, superconducting systems, and cryogenic nanoelectronics.",
+    specStrip: [
+      "4 / 8 / 16 Isolated Channels", "±10 V Bipolar Outputs", "16-Bit DAC Resolution", 
+      "100 dB Crosstalk Isolation", "Ultra-Low Noise Analog Design", "LabVIEW & Python Ready"
+    ],
+    heroImage: "/images/quantum-volt-hero.png",
     gallery: [
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1581092335397-9583eb92d232?q=80&w=800&auto=format&fit=crop"
+      "/images/quantum-volt-channels.png",
+      "/images/quantum-volt-pcb.png"
     ],
     overview: [
-      "QuantumVolt™ is an ultra-low-noise, isolated voltage source designed specifically for nanoelectronics, quantum transport, and quantum computing experiments.",
-      "It delivers stable, precise gate and bias control through fully isolated bipolar outputs. This architecture enables reproducible tuning of sensitive quantum devices without introducing electrical noise or ground loops, which are critical points of failure in millikelvin environments."
+      "QuantumVolt™ is Cryonano’s precision isolated voltage source platform engineered for quantum transport measurements, superconducting devices, nanoelectronics, and cryogenic research systems.",
+      "Designed specifically for electrically sensitive low-temperature experiments, QuantumVolt™ delivers ultra-stable isolated bipolar outputs with extremely low noise, low drift, and high channel-to-channel isolation.",
+      "The modular architecture enables scalable system expansion while preserving precision analog performance and measurement integrity.",
+      "Unlike conventional laboratory power supplies, the outputs are optimized for ultra-low noise operation, minimal temperature drift, high long-term stability, independent isolated signal paths, precision voltage sweeps, and simultaneous multi-channel updates.",
+      "The isolated architecture eliminates ground loops and cross-channel interference, making the platform ideal for cryogenic transport measurements and quantum device control."
     ],
-    features: [
-      { icon: Cpu, title: "Four Isolated Bipolar Outputs", description: "Each channel provides ±10 V independently, stackable to ±40 V for highly flexible gate control." },
-      { icon: Activity, title: "16-Bit DAC Resolution", description: "High-resolution digital-to-analog conversion enables exceptionally fine voltage steps and smooth continuous sweeps." },
-      { icon: Shield, title: "Ultra-Low Noise Architecture", description: "Optimized analog design with linear regulation minimizes output noise to preserve fragile quantum states." },
-      { icon: Settings, title: "Native Automation", description: "Out-of-the-box LabVIEW and Python support enables seamless integration with existing automated measurement workflows." },
+    keyFeatures: [
+      { title: "Fully Isolated Outputs", desc: "Each channel provides a completely independent signal path for noise-free gate and bias control.", icon: "Shield" },
+      { title: "Precision Bipolar Outputs", desc: "Stable ±10 V bipolar outputs with stackable configurations up to ±40 V.", icon: "Activity" },
+      { title: "Ultra-Low Noise Architecture", desc: "Optimized analog circuitry minimizes electrical noise and preserves fragile quantum states.", icon: "Waves" },
+      { title: "High Stability & Low Drift", desc: "Designed for long-duration experiments requiring stable voltage biasing and repeatable measurements.", icon: "Target" },
+      { title: "16-Bit DAC Resolution", desc: "High-resolution DAC architecture enables ultra-fine voltage steps and smooth voltage sweeps.", icon: "Cpu" },
+      { title: "Automation & Software Integration", desc: "Native USB control with LabVIEW drivers and Python-compatible experimental automation workflows.", icon: "Settings" }
+    ],
+    channelConfigs: [
+      {
+        name: "4-Channel QuantumVolt™",
+        desc: "Compact low-noise voltage control platform for:",
+        points: ["Small-scale quantum experiments", "Gate control", "Sensor characterization", "Single-device measurements"],
+        color: "blue"
+      },
+      {
+        name: "8-Channel QuantumVolt™",
+        desc: "Expanded architecture for:",
+        points: ["Multi-gate devices", "Spintronics experiments", "Cryogenic transport systems", "Complex device tuning"],
+        color: "purple"
+      },
+      {
+        name: "16-Channel QuantumVolt™",
+        desc: "High-density precision bias control for:",
+        points: ["Quantum computing systems", "Multi-terminal devices", "Large-scale experimental platforms", "Automated measurement infrastructure"],
+        color: "emerald"
+      }
     ],
     specs: {
-      "Output Configuration": "4 Isolated Bipolar Channels",
-      "Voltage Range per Channel": "±10 V (Stackable to ±40 V)",
-      "Resolution": "16-Bit DAC (~300 µV steps)",
-      "Output Noise (0.1 Hz to 10 Hz)": "< 2 µV peak-to-peak",
-      "Temperature Coefficient": "< 5 ppm/°C",
-      "Isolation": "> 10 GΩ channel-to-channel",
-      "Interface": "USB 2.0 / Native Python & LabVIEW",
-      "Power Supply": "100-240 VAC, 50/60 Hz"
+      "Channel Configurations": "4 / 8 / 16",
+      "Output Voltage Range": "±10 V Bipolar",
+      "Stackable Output": "Up to ±40 V",
+      "Output Connectors": "BNC Sockets",
+      "Output Current": "±10 mA per channel typical",
+      "Output Resistance": "100 mΩ",
+      "DAC Resolution": "16 Bits",
+      "Gain Error": "0.01%",
+      "Offset Error": "0.1%",
+      "Temperature Drift": "6 ppm/°C, 80 µV/°C",
+      "Channel Crosstalk": "100 dB",
+      "Common Mode Voltage": "120 dB",
+      "Slew Rate": "7 V/µs",
+      "Noise": "260 µVrms",
+      "Power-On State": "High Impedance",
+      "Full Scale Settling Time": "20 µs",
+      "3 V Step Response": "10 µs",
+      "0.1 V Step Response": "8 µs",
+      "Overvoltage Protection": "±30 V",
+      "Short Circuit Protection": "Continuous",
+      "Interface": "USB 2.0",
+      "Software Support": "LabVIEW Drivers & Executable",
+      "Channel Isolation": "250 Vrms Continuous",
+      "Dielectric Withstand": "1390 Vrms",
+      "Operating Temperature": "+10°C to +40°C",
+      "Weight": "Approx. 0.5 kg"
     },
-    performanceData: {
-      title: "Output Noise Spectral Density",
-      description: "Comparative noise floor vs standard SMU equipment.",
-      metrics: [
-        { label: "1 Hz", value: 8, max: 100, unit: "nV/√Hz" },
-        { label: "10 Hz", value: 5, max: 100, unit: "nV/√Hz" },
-        { label: "100 Hz", value: 3, max: 100, unit: "nV/√Hz" },
-        { label: "1 kHz", value: 2, max: 100, unit: "nV/√Hz" },
-      ]
+    analogDesign: {
+      title: "Ultra-Low Noise Analog Design",
+      subtitle: "Built for Sensitive Quantum Experiments",
+      minimizes: ["Voltage ripple", "Thermal drift", "Ground coupling", "Crosstalk", "Environmental interference"],
+      highlights: ["Independent isolated DAC channels", "Precision low-noise references", "High common-mode rejection", "Stable output architecture", "Low drift analog stages", "Optimized PCB grounding"],
+      footer: "The system is specifically engineered for fragile low-current and low-temperature experiments where signal integrity is critical."
+    },
+    integration: {
+      title: "Seamless Experimental Integration",
+      connectsWith: ["Cryostats", "Dilution refrigerators", "Quantum transport setups", "Superconducting systems", "Nanoelectronics platforms", "Cryogenic probe stations"],
+      features: ["USB-based host control", "Simultaneous channel updates", "Automated sweep generation", "Real-time voltage control", "Laboratory automation compatibility"],
+      compatibleWith: ["LabVIEW", "Python", "MATLAB", "Custom DAQ systems"]
+    },
+    protection: {
+      title: "Integrated Experimental Protection",
+      desc: "The platform incorporates multiple protection layers for safe operation in research environments.",
+      features: ["±30 V overvoltage protection", "Continuous short-circuit protection", "High channel isolation", "High impedance startup state", "Dielectric withstand protection"],
+      protects: ["Quantum devices", "Sensitive samples", "Cryogenic wiring", "Experimental instrumentation"]
     },
     applications: [
-      "Quantum Transport Experiments",
-      "2D Material Devices (Graphene, hBN)",
-      "Superconducting Qubits",
-      "Spintronics Research",
-      "Cryogenic Device Characterization"
+      "Quantum transport experiments", "Superconducting qubits", "Graphene & 2D materials", 
+      "Spintronics research", "Cryogenic electronics", "Nanoelectronics characterization", 
+      "Quantum device tuning", "Low-temperature transport measurements", "Hall effect studies", "Precision gate control systems"
     ]
   },
   
@@ -158,47 +262,188 @@ export const productsData: Record<string, any> = {
     ]
   },
 
+  // "nano-stage": {
+  //   category: "Cryogenics",
+  //   name: "Cryogenic NanoStage",
+  //   subtitle: "Vitrified Cryogenic Microscopy",
+  //   heroImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop", 
+  //   gallery: [
+  //     "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=800&auto=format&fit=crop"
+  //   ],
+  //   overview: [
+  //     "A liquid-nitrogen-cooled nano-positioning platform engineered for Cryo-CLEM, cryo-fluorescence, and super-resolution imaging workflows.",
+  //     "Designed to maintain vitrification integrity while enabling nanometer-scale precision mapping."
+  //   ],
+  //   features: [
+  //     { icon: ThermometerSnowflake, title: "Thermal Control", description: "Continuous liquid nitrogen cooling operating below -195°C. Frost-controlled sealed chamber with devitrification prevention." },
+  //     { icon: Crosshair, title: "Nano Positioning", description: "Motorised encoded XY nano-positioning with high-resolution coordinate tracking for absolute accuracy." },
+  //     { icon: Grid, title: "Automated Grid Mapping", description: "Automated EM grid mapping for accurate multi-platform relocation." },
+  //     { icon: MonitorPlay, title: "Workflow Automation", description: "Fully software-integrated workflow automation to streamline imaging tasks." },
+  //   ],
+  //   benefits: [
+  //     { icon: Shield, title: "Vitrification Protection", description: "Maintains absolute sample integrity during extended cryogenic observation sessions." },
+  //     { icon: Move, title: "Nano-Scale Motion", description: "Ultra-smooth, drift-free motorized movement ensuring perfect super-resolution imaging." },
+  //     { icon: Layers, title: "Multi-Grid Cassette", description: "Efficiently load and navigate multiple EM grids without breaking the cryogenic seal." },
+  //     { icon: MonitorPlay, title: "Cross-Platform Imaging", description: "Seamless coordinate transfer between fluorescence and electron microscopes." }
+  //   ],
+  //   applications: [
+  //     "Cryo-CLEM Workflows",
+  //     "Cryo-Fluorescence Microscopy",
+  //     "Super-Resolution Imaging",
+  //     "Vitrified Biological Sample Analysis",
+  //     "Correlative Coordinate Mapping"
+  //   ],
+  //   specs: {
+  //     "Operating Temperature": "Below -195°C (Liquid Nitrogen)",
+  //     "Positioning Type": "Motorised Encoded XY",
+  //     "Environment": "Frost-controlled sealed chamber",
+  //     "Sample Protection": "Integrated Devitrification Prevention",
+  //     "Software Interface": "Full automation suite included",
+  //     "Relocation Accuracy": "Sub-micron multi-platform tracking",
+  //     "Grid Compatibility": "Standard EM Multi-Grid Cassettes"
+  //   }
+  // },
+
+
   "nano-stage": {
-    category: "Cryogenics",
-    name: "Cryogenic NanoStage",
-    subtitle: "Vitrified Cryogenic Microscopy",
-    heroImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop", 
-    gallery: [
-      "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=800&auto=format&fit=crop"
+  category: "Cryogenics",
+  name: "Cryogenic NanoStage",
+  subtitle: "Precision Thermal Control for Advanced Scientific Imaging",
+  heroImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop",
+  gallery: [
+    "https://images.unsplash.com/photo-1581092335397-9583eb92d232?q=80&w=800&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=800&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?q=80&w=800&auto=format&fit=crop",
+  ],
+  overview: [
+    "The Cryogenic / High-Temperature Microscopy Stage is a next-generation thermal platform engineered for demanding microscopy, spectroscopy, and materials characterization applications. Designed for operation from cryogenic temperatures below −195°C to elevated temperatures, the system delivers exceptional thermal stability, optical accessibility, and environmental control for cutting-edge scientific research.",
+    "Optimized for vacuum and controlled atmosphere environments, the stage supports advanced imaging techniques including confocal microscopy, Raman spectroscopy, fluorescence microscopy, and X-ray characterization."
+  ],
+  keyFeatures: [
+    { title: "Ultra-Wide Temperature Range", desc: "Stable operation from cryogenic temperatures below liquid nitrogen temperatures up to elevated thermal conditions.", icon: "ThermometerSnowflake" },
+    { title: "Exceptional Thermal Stability", desc: "Sub-0.01°C temperature stability for precision scientific experiments and repeatable measurements.", icon: "Activity" },
+    { title: "Direct Cryogenic Cooling", desc: "Direct coolant injection into the OFHC copper thermal block enables rapid cooldown, reduced thermal gradients, uniform sample temperature, and improved cryogenic efficiency.", icon: "Zap" },
+    { title: "Vacuum & Controlled Atmosphere Capability", desc: "Supports high vacuum operation, inert gas purging, moisture‑sensitive experiments, and oxygen‑free thermal cycling.", icon: "Shield" },
+    { title: "Precision Optical Access", desc: "Ultra‑thin optical window optimized for high numerical aperture objectives, Raman spectroscopy, confocal imaging, and reduced optical distortion.", icon: "Camera" },
+    { title: "Low Thermal Drift Design", desc: "Mechanical architecture optimized for minimal vibration, low expansion, stable optical alignment, and high positional stability.", icon: "Move" }
+  ],
+  technicalSpecs: [
+    { param: "Temperature Range", spec: "Below −195°C to elevated temperatures" },
+    { param: "Temperature Stability", spec: "Better than 0.01°C" },
+    { param: "Thermal Block Material", spec: "Gold-plated OFHC Copper" },
+    { param: "Temperature Sensor", spec: "1000 Ω Platinum RTD" },
+    { param: "Cooling Method", spec: "Direct cryogenic coolant injection" },
+    { param: "Optical Window", spec: "0.5 mm ultra-thin lid window" },
+    { param: "Optical Aperture", spec: "20 mm" },
+    { param: "Objective Working Distance", spec: "Minimum 5 mm" },
+    { param: "Atmosphere Modes", spec: "Vacuum / Inert Gas / Controlled Atmosphere" },
+    { param: "High Temperature Cooling", spec: "External water-cooled body" },
+    { param: "Compatible Techniques", spec: "Raman, Confocal, Fluorescence, X-ray" }
+  ],
+  thermalArchitecture: {
+    title: "Advanced Cryogenic Thermal Architecture",
+    description: "The system incorporates a high-conductivity gold-plated OFHC copper thermal block with direct coolant injection for maximum thermal efficiency and uniformity.",
+    advantages: [
+      "Fast thermal response",
+      "High thermal conductivity",
+      "Reduced localized heating",
+      "Improved thermal homogeneity",
+      "Enhanced cryogenic performance",
+      "Stable long-duration operation"
     ],
-    overview: [
-      "A liquid-nitrogen-cooled nano-positioning platform engineered for Cryo-CLEM, cryo-fluorescence, and super-resolution imaging workflows.",
-      "Designed to maintain vitrification integrity while enabling nanometer-scale precision mapping."
-    ],
-    features: [
-      { icon: ThermometerSnowflake, title: "Thermal Control", description: "Continuous liquid nitrogen cooling operating below -195°C. Frost-controlled sealed chamber with devitrification prevention." },
-      { icon: Crosshair, title: "Nano Positioning", description: "Motorised encoded XY nano-positioning with high-resolution coordinate tracking for absolute accuracy." },
-      { icon: Grid, title: "Automated Grid Mapping", description: "Automated EM grid mapping for accurate multi-platform relocation." },
-      { icon: MonitorPlay, title: "Workflow Automation", description: "Fully software-integrated workflow automation to streamline imaging tasks." },
-    ],
-    benefits: [
-      { icon: Shield, title: "Vitrification Protection", description: "Maintains absolute sample integrity during extended cryogenic observation sessions." },
-      { icon: Move, title: "Nano-Scale Motion", description: "Ultra-smooth, drift-free motorized movement ensuring perfect super-resolution imaging." },
-      { icon: Layers, title: "Multi-Grid Cassette", description: "Efficiently load and navigate multiple EM grids without breaking the cryogenic seal." },
-      { icon: MonitorPlay, title: "Cross-Platform Imaging", description: "Seamless coordinate transfer between fluorescence and electron microscopes." }
-    ],
-    applications: [
-      "Cryo-CLEM Workflows",
-      "Cryo-Fluorescence Microscopy",
-      "Super-Resolution Imaging",
-      "Vitrified Biological Sample Analysis",
-      "Correlative Coordinate Mapping"
-    ],
-    specs: {
-      "Operating Temperature": "Below -195°C (Liquid Nitrogen)",
-      "Positioning Type": "Motorised Encoded XY",
-      "Environment": "Frost-controlled sealed chamber",
-      "Sample Protection": "Integrated Devitrification Prevention",
-      "Software Interface": "Full automation suite included",
-      "Relocation Accuracy": "Sub-micron multi-platform tracking",
-      "Grid Compatibility": "Standard EM Multi-Grid Cassettes"
-    }
+    conclusion: "The architecture minimizes temperature gradients across the sample area, making it ideal for precision spectroscopy and low-temperature imaging."
   },
+  atmosphereVacuumControl: {
+    title: "Atmosphere & Vacuum Control",
+    description: "The chamber is designed for advanced environmental control and supports:",
+    features: [
+      "Vacuum microscopy experiments",
+      "Controlled gas environments",
+      "Inert gas purging",
+      "Moisture-sensitive sample handling",
+      "Oxygen-free processing"
+    ],
+    note: "Quick-release gas valves allow rapid integration with laboratory gas systems and simplified atmosphere switching."
+  },
+  opticalDesign: {
+    title: "Optical Design",
+    subtitle: "Ultra-Thin Optical Window",
+    description: "The 0.5 mm lid window minimizes:",
+    benefits: [
+      "Spherical aberration",
+      "Optical path distortion",
+      "Raman signal attenuation",
+      "Working distance losses"
+    ],
+    conclusion: "The design is optimized for high-NA objective lenses and advanced spectroscopy systems requiring short working distances."
+  },
+  precisionTemperatureSensing: {
+    title: "Precision Temperature Sensing",
+    subtitle: "Integrated Platinum RTD",
+    description: "A precision 1000 Ω platinum resistor sensor provides:",
+    features: [
+      "High accuracy temperature monitoring",
+      "Excellent long-term stability",
+      "Fast thermal response",
+      "Low-noise feedback"
+    ],
+    conclusion: "Suitable for advanced closed-loop PID thermal control systems."
+  },
+  microscopyCompatibility: [
+    "Optical Microscopy",
+    "Fluorescence Microscopy",
+    "Confocal Microscopy",
+    "Raman Spectroscopy",
+    "X-ray Analysis",
+    "Cryogenic Imaging",
+    "Materials Characterization Platforms"
+  ],
+  highTempOperation: {
+    title: "High-Temperature Operation",
+    description: "For operation above 250°C in vacuum environments, the stage body supports external water cooling to:",
+    benefits: [
+      "Protect surrounding optics",
+      "Reduce external thermal loading",
+      "Improve thermal regulation",
+      "Maintain structural integrity"
+    ]
+  },
+  applications: [
+    "Cryogenic materials analysis",
+    "Semiconductor characterization",
+    "Superconducting material studies",
+    "Quantum materials imaging",
+    "In-situ thermal microscopy",
+    "Low-temperature Raman spectroscopy",
+    "Failure analysis",
+    "Biological cryogenic imaging",
+    "Vacuum microscopy experiments"
+  ],
+  mechanicalDesignHighlights: [
+    "Gold-plated OFHC thermal mass",
+    "Vacuum-compatible construction",
+    "Precision optical alignment",
+    "Compact microscope footprint",
+    "Low thermal expansion structure",
+    "Low vibration thermal interface"
+  ],
+  optionalConfigurations: [
+    "Automated gas switching manifold",
+    "Vacuum gauge integration",
+    "Additional optical ports",
+    "Custom sample holders",
+    "LN₂ or LHe cooling configurations",
+    "High-temperature furnace integration"
+  ],
+  systemCompatibility: [
+    "Upright microscopes",
+    "Inverted microscopes",
+    "Raman systems",
+    "Confocal imaging platforms",
+    "X-ray instrumentation",
+    "Custom optical benches"
+  ]
+},
 
   "2d-transfer-system": {
     category: "Cryogenics",
@@ -724,235 +969,553 @@ export const productsData: Record<string, any> = {
     }
   },
 
+  // "spectroscopy-magnet": {
+  //   category: "Electromagnets",
+  //   name: "Variable Gap Electromagnet System",
+  //   subtitle: "High Field Strength and Unmatched Uniformity for Research.",
+  //   // Replace with a high-resolution, light-themed product image from brochure
+  //   heroImage: "/images/variable-gap-electromagnet.png", 
+  //   gallery: [],
+  //   overview: [
+  //     "CRYO presents a versatile Variable Gap Electromagnet System, meticulously engineered to produce high magnetic field strengths with sub-micron uniformity. This system is designed for researchers demanding precise, deterministic variable field generation.",
+  //     "The integrated modular architecture allows for seamless integration into custom experimental setups. With support for both air and water cooling, sub-micron resolution gap automated control, and high purity soft iron core optimization, this system delivers consistent, stable long-term performance.",
+  //     "Available in multiple standardized and custom model configurations, including the PE-series, this platform is compatible with high-performance bipolar power supplies, making it an ideal research-grade solution for spintronics, magneto-optics, and advanced materials development.",
+  //   ],
+  //   keyFeatures: [
+  //       "Uniform Magnetic Field",
+  //       "Variable Pole Gap",
+  //       "Variable Pole Shape",
+  //       "Custom designs are available",
+  //       "Water Cooled Electromagnets",
+  //       "Air Cooled Electromagnets",
+  //       "High Magnetic Field",
+  //       "Bipolar Power Supply Compatibility",
+  //       "Robust construction",
+  //       "High Purity Soft Iron Core Optimization"
+  //   ],
+  //   // NEW STRUCTURED DATA: Models & key performance indicators (Images 1 & 2)
+  //   models: [
+  //     { id: "50mm", name: "50mm Pole Diameter", field_T: 1.85, field_Oe: 18500, maxGap: 50, cooling: "Water" },
+  //     { id: "100mm", name: "100mm Pole Diameter", field_T: 2.2, field_Oe: 22000, maxGap: 50, cooling: "Water" },
+  //     { id: "PE-1", name: "PE-1 Standard Model", field_T: 1.0, field_Oe: 10000, maxGap: 50, cooling: "Air/Water" },
+  //     { id: "PE-2", name: "PE-2 Standard Model", field_T: 1.0, field_Oe: 10000, maxGap: 60, cooling: "Air/Water" },
+  //     { id: "PE-3", name: "PE-3 Standard Model", field_T: 0.6, field_Oe: 6000, maxGap: 80, cooling: "Air/Water" },
+  //   ],
+  //   // NEW STRUCTURED DATA: Specific Performance Points for Interactive Graph (Image 3)
+  //   // Points simulated to match graph curves. Data: Field (Tesla) vs Current (Amps)
+  //   performanceCurves: {
+  //     "PE-1": [ { current: 0, field: 0.00 }, { current: 0.5, field: 0.23 }, { current: 1.0, field: 0.51 }, { current: 1.5, field: 0.73 }, { current: 2.0, field: 0.89 }, { current: 2.5, field: 1.00 } ],
+  //     "PE-2": [ { current: 0, field: 0.00 }, { current: 0.5, field: 0.20 }, { current: 1.0, field: 0.44 }, { current: 1.5, field: 0.62 }, { current: 2.0, field: 0.75 }, { current: 2.5, field: 0.85 }, { current: 3.0, field: 1.00 } ],
+  //     "PE-3": [ { current: 0, field: 0.00 }, { current: 1.0, field: 0.22 }, { current: 2.0, field: 0.46 }, { current: 3.0, field: 0.60 } ]
+  //   },
+  //   // NEW STRUCTURED DATA: Matrix layout for specification tables (Images 1, 2, 3)
+  //   // Structured by Model, then by specification key.
+  //   modelMatrix: {
+  //       "Technical Specifications": {
+  //           columns: ["Metric", "PE-1", "PE-2", "PE-3"],
+  //           rows: [
+  //               ["Field Strength (Gap: 10mm)", "1.0 T / 10,000 Oe", "1.0 T / 10,000 Oe", "0.6 T / 6,000 Oe"],
+  //               ["Gap Range", "0 – 50 mm", "0 – 60 mm", "0 – 80 mm"],
+  //               ["Max Gap Range (PE Series)", "50 mm", "60 mm", "80 mm"],
+  //               ["Current (Max)", "2.5 Amps", "3.0 Amps", "3.0 Amps"],
+  //               ["Coil Resistance", "12 Ω", "13 Ω", "23 Ω"],
+  //               ["Power Consumption", "75 Watts (Max)", "117 Watts (Max)", "207 Watts (Max)"],
+  //               ["Cooling Method", "Air or Water-Cooled", "Air or Water-Cooled", "Air or Water-Cooled"],
+  //               ["Pole Shape Options", "Customisable: 2-stage/4-stage/Radial", "Customisable: 2-stage/4-stage/Radial", "Customisable: 2-stage/4-stage/Radial"],
+  //               ["Robust Construction", "ISO 9001:2008 Certified Design", "ISO 9001:2008 Certified Design", "ISO 9001:2008 Certified Design"]
+  //           ]
+  //       },
+  //       "Physical Specifications": {
+  //           columns: ["Metric", "PE-1", "PE-2", "PE-3"],
+  //           rows: [
+  //               ["Weight", "60 kg (Approx)", "70 kg (Approx)", "75 kg (Approx)"],
+  //               ["Dimensions (L x W x H)", "300 x 200 x 250 mm", "320 x 210 x 260 mm", "330 x 220 x 270 mm"],
+  //               ["Sub-micron Resolution", "< 1 µm (With Encoder)", "< 1 µm (With Encoder)", "< 1 µm (With Encoder)"]
+  //           ]
+  //       }
+  //   },
+  //   probingCompatibility: {}, // Removed as not microscope related
+  //   designHighlights: [
+  //       { title: "Bipolar power supply compatible", desc: "Supports rapid field inversion and complex AC field generation sequences.", component: "Logic Core" },
+  //       { title: "High Purity soft iron core optimization", desc: "Designed for stable long-term performance with minimal thermal drift.", component: "Transfer Arm" },
+  //       { title: "Iso-Certified Robust Construction", desc: "Engineered for repeatable sub-micron variable gap automated control.", component: "Optical Path" },
+  //       { title: "Variable Pole Gap and Pole Shape", desc: "Provides ultimate flexibility for custom deterministic placement of magnetic experimental conditions.", component: "Software UI" }
+  //   ],
+  //   modularitySpecs: {
+  //     "Custom Designs": [
+  //       "ISO-Certified custom pole diameter configurations",
+  //       "Multiple standardized and custom pole shape options",
+  //       "Water cooled and air cooled system optimization available",
+  //       "Optional vibration isolation system available",
+  //       "High-performance bipolar power supply integration available"
+  //     ]
+  //   },
+  // },
+
+
   "spectroscopy-magnet": {
     category: "Electromagnets",
-    name: "Variable Gap Electromagnet System",
-    subtitle: "High Field Strength and Unmatched Uniformity for Research.",
-    // Replace with a high-resolution, light-themed product image from brochure
-    heroImage: "/images/variable-gap-electromagnet.png", 
-    gallery: [],
+    name: "PL Compact Optical Access Electromagnet",
+    subtitle: "Ultra-compact high-field dipole electromagnet optimized for spectroscopy, optical measurements, laser experiments, and vibration-sensitive scientific research.",
+    specStrip: [
+      "Compact 14 kg System", "Optical Access Optimized", "80 A High Current Operation",
+      "Low-Profile Coil Geometry", "1.5 kW Power Supply", "Water-Cooled Architecture"
+    ],
+    heroImage: "/images/spectroscopy-electromagnet.png",
+    gallery: [
+      "/images/spectroscopy-optics.png",
+      "/images/spectroscopy-profile.png"
+    ],
     overview: [
-      "CRYO presents a versatile Variable Gap Electromagnet System, meticulously engineered to produce high magnetic field strengths with sub-micron uniformity. This system is designed for researchers demanding precise, deterministic variable field generation.",
-      "The integrated modular architecture allows for seamless integration into custom experimental setups. With support for both air and water cooling, sub-micron resolution gap automated control, and high purity soft iron core optimization, this system delivers consistent, stable long-term performance.",
-      "Available in multiple standardized and custom model configurations, including the PE-series, this platform is compatible with high-performance bipolar power supplies, making it an ideal research-grade solution for spintronics, magneto-optics, and advanced materials development.",
+      "The PL Electromagnet is one of the smallest and lightest high-performance dipole electromagnets developed by Cryo Nano Labs, engineered specifically for precision laboratory research and industrial scientific applications requiring compact high magnetic fields with superior optical accessibility.",
+      "Designed with a unique low-profile coil geometry and optimized magnetic architecture, the PL Electromagnet delivers powerful magnetic field performance while minimizing optical obstruction. Its lightweight mechanical structure enables direct integration onto optical tables, spectroscopy platforms, laser systems, and vibration-sensitive experimental setups.",
+      "The system is ideal for applications where compact size, optical access, thermal stability, and magnetic field performance must coexist within limited laboratory space."
     ],
+    overviewRequirements: [
+      "Small magnetic field volumes", "High optical accessibility", "Minimal beam obstruction", 
+      "Stable optical table integration", "Compact laboratory footprint"
+    ],
+    overviewIdealFor: [
+      "Spectroscopy systems", "Laser measurements", "Magneto-optical experiments", 
+      "Imaging systems", "Precision optical instrumentation"
+    ],
+    overviewFooter: "The system combines compact dipole magnetic architecture with advanced thermal management and low-noise current delivery for stable experimental operation.",
     keyFeatures: [
-        "Uniform Magnetic Field",
-        "Variable Pole Gap",
-        "Variable Pole Shape",
-        "Custom designs are available",
-        "Water Cooled Electromagnets",
-        "Air Cooled Electromagnets",
-        "High Magnetic Field",
-        "Bipolar Power Supply Compatibility",
-        "Robust construction",
-        "High Purity Soft Iron Core Optimization"
+      { title: "Optical Access Optimized", desc: "Low-profile coil geometry minimizes beam obstruction and enables direct optical access through the magnetic field region.", icon: "Eye" },
+      { title: "Compact Lightweight Design", desc: "At approximately 14 kg, the PL Electromagnet is one of the lightest research-grade dipole electromagnets in its performance class.", icon: "PackageSearch" },
+      { title: "Optical Table Compatible", desc: "Stable mounting geometry designed for direct integration onto optical tables and vibration-sensitive experimental platforms.", icon: "Layers" },
+      { title: "Unique Low-Profile Coil System", desc: "Patent-pending compact coil architecture reduces overall magnet height while maintaining strong magnetic field generation.", icon: "Scaling" },
+      { title: "Water-Cooled Thermal Architecture", desc: "Thermally encapsulated coils with copper-aluminium cooling jackets support stable high-current operation.", icon: "Thermometer" },
+      { title: "Low Ripple Power Electronics", desc: "IGBT-based high-current power supply provides stable low-noise magnetic field operation for precision measurements.", icon: "Zap" }
     ],
-    // NEW STRUCTURED DATA: Models & key performance indicators (Images 1 & 2)
-    models: [
-      { id: "50mm", name: "50mm Pole Diameter", field_T: 1.85, field_Oe: 18500, maxGap: 50, cooling: "Water" },
-      { id: "100mm", name: "100mm Pole Diameter", field_T: 2.2, field_Oe: 22000, maxGap: 50, cooling: "Water" },
-      { id: "PE-1", name: "PE-1 Standard Model", field_T: 1.0, field_Oe: 10000, maxGap: 50, cooling: "Air/Water" },
-      { id: "PE-2", name: "PE-2 Standard Model", field_T: 1.0, field_Oe: 10000, maxGap: 60, cooling: "Air/Water" },
-      { id: "PE-3", name: "PE-3 Standard Model", field_T: 0.6, field_Oe: 6000, maxGap: 80, cooling: "Air/Water" },
+    specs: {
+      "Magnet Type": "Compact Dipole Electromagnet",
+      "Mechanical Pole Size": "38 mm × 38 mm",
+      "Pole Face Diameter": "20 mm",
+      "Pole Gap": "10 mm",
+      "Approximate Weight": "14 kg",
+      "Coil Design": "Patent-Pending Low-Profile Geometry",
+      "Cooling Method": "Water-Cooled Thermally Encapsulated Coils",
+      "Cooling Structure": "Copper-Aluminium Cooling Jackets",
+      "Power Supply Type": "IGBT High-Current Power Supply",
+      "Maximum Current": "Up to 80 A",
+      "Power Supply Power": "1.5 kW",
+      "Power Supply Noise": "Low Ripple Unipolar Design",
+      "Mounting Compatibility": "Optical Table Compatible"
+    },
+    opticalAccess: {
+      title: "Engineered for Spectroscopy & Optical Research",
+      desc: "The PL Electromagnet is specifically optimized for optical experiments where beam clearance and accessibility are critical.",
+      highlights: ["Minimal optical obstruction", "Low-profile coil geometry", "Open beam path architecture", "Stable optical alignment", "Compact magnetic footprint", "Reduced interference with optics"],
+      idealFor: ["Raman spectroscopy", "Magneto-optical Kerr effect measurements", "Laser characterization", "Fluorescence experiments", "Optical imaging systems", "Beamline research setups"]
+    },
+    thermalManagement: {
+      title: "Advanced Water-Cooled Coil Architecture",
+      desc: "The PL Electromagnet integrates thermally encapsulated coils with copper-aluminium cooling structures for efficient heat dissipation during continuous high-current operation.",
+      features: ["Closed-loop water cooling", "Copper-aluminium thermal jackets", "Reduced coil thermal drift", "Stable long-duration operation", "Compact thermal architecture"],
+      footer: "The cooling system enables high current density while maintaining thermal stability required for precision measurements."
+    },
+    powerSupply: {
+      title: "Precision Low-Noise Current Delivery",
+      desc: "The magnet is powered using a high-current IGBT-based low ripple unipolar power supply optimized for stable magnetic field generation.",
+      features: ["Up to 80 A current output", "1.5 kW power capability", "Low ripple current regulation", "Stable DC magnetic field generation", "Compact laboratory integration", "Precision current control"],
+      idealFor: ["Sensitive spectroscopy systems", "Low-noise measurements", "Optical instrumentation", "Precision scientific experiments"]
+    },
+    mechanicalDesign: {
+      title: "Compact Scientific Instrumentation Architecture",
+      desc: "The PL Electromagnet is designed for laboratories requiring:",
+      requirements: ["Small experimental footprint", "Portable magnet systems", "Easy optical alignment", "Flexible experimental configuration", "Stable vibration-sensitive operation"],
+      highlights: ["Lightweight 14 kg structure", "Stable mounting base", "Precision-machined magnetic poles", "Compact dipole geometry", "Laboratory-friendly integration"]
+    },
+    applications: [
+      "Magneto-optical spectroscopy", "Raman spectroscopy", "Laser experiments", "Optical characterization", 
+      "Imaging systems", "Sensor testing", "Hall measurements", "Semiconductor characterization", 
+      "Materials science research", "Educational laboratory systems"
     ],
-    // NEW STRUCTURED DATA: Specific Performance Points for Interactive Graph (Image 3)
-    // Points simulated to match graph curves. Data: Field (Tesla) vs Current (Amps)
-    performanceCurves: {
-      "PE-1": [ { current: 0, field: 0.00 }, { current: 0.5, field: 0.23 }, { current: 1.0, field: 0.51 }, { current: 1.5, field: 0.73 }, { current: 2.0, field: 0.89 }, { current: 2.5, field: 1.00 } ],
-      "PE-2": [ { current: 0, field: 0.00 }, { current: 0.5, field: 0.20 }, { current: 1.0, field: 0.44 }, { current: 1.5, field: 0.62 }, { current: 2.0, field: 0.75 }, { current: 2.5, field: 0.85 }, { current: 3.0, field: 1.00 } ],
-      "PE-3": [ { current: 0, field: 0.00 }, { current: 1.0, field: 0.22 }, { current: 2.0, field: 0.46 }, { current: 3.0, field: 0.60 } ]
-    },
-    // NEW STRUCTURED DATA: Matrix layout for specification tables (Images 1, 2, 3)
-    // Structured by Model, then by specification key.
-    modelMatrix: {
-        "Technical Specifications": {
-            columns: ["Metric", "PE-1", "PE-2", "PE-3"],
-            rows: [
-                ["Field Strength (Gap: 10mm)", "1.0 T / 10,000 Oe", "1.0 T / 10,000 Oe", "0.6 T / 6,000 Oe"],
-                ["Gap Range", "0 – 50 mm", "0 – 60 mm", "0 – 80 mm"],
-                ["Max Gap Range (PE Series)", "50 mm", "60 mm", "80 mm"],
-                ["Current (Max)", "2.5 Amps", "3.0 Amps", "3.0 Amps"],
-                ["Coil Resistance", "12 Ω", "13 Ω", "23 Ω"],
-                ["Power Consumption", "75 Watts (Max)", "117 Watts (Max)", "207 Watts (Max)"],
-                ["Cooling Method", "Air or Water-Cooled", "Air or Water-Cooled", "Air or Water-Cooled"],
-                ["Pole Shape Options", "Customisable: 2-stage/4-stage/Radial", "Customisable: 2-stage/4-stage/Radial", "Customisable: 2-stage/4-stage/Radial"],
-                ["Robust Construction", "ISO 9001:2008 Certified Design", "ISO 9001:2008 Certified Design", "ISO 9001:2008 Certified Design"]
-            ]
-        },
-        "Physical Specifications": {
-            columns: ["Metric", "PE-1", "PE-2", "PE-3"],
-            rows: [
-                ["Weight", "60 kg (Approx)", "70 kg (Approx)", "75 kg (Approx)"],
-                ["Dimensions (L x W x H)", "300 x 200 x 250 mm", "320 x 210 x 260 mm", "330 x 220 x 270 mm"],
-                ["Sub-micron Resolution", "< 1 µm (With Encoder)", "< 1 µm (With Encoder)", "< 1 µm (With Encoder)"]
-            ]
-        }
-    },
-    probingCompatibility: {}, // Removed as not microscope related
-    designHighlights: [
-        { title: "Bipolar power supply compatible", desc: "Supports rapid field inversion and complex AC field generation sequences.", component: "Logic Core" },
-        { title: "High Purity soft iron core optimization", desc: "Designed for stable long-term performance with minimal thermal drift.", component: "Transfer Arm" },
-        { title: "Iso-Certified Robust Construction", desc: "Engineered for repeatable sub-micron variable gap automated control.", component: "Optical Path" },
-        { title: "Variable Pole Gap and Pole Shape", desc: "Provides ultimate flexibility for custom deterministic placement of magnetic experimental conditions.", component: "Software UI" }
-    ],
-    modularitySpecs: {
-      "Custom Designs": [
-        "ISO-Certified custom pole diameter configurations",
-        "Multiple standardized and custom pole shape options",
-        "Water cooled and air cooled system optimization available",
-        "Optional vibration isolation system available",
-        "High-performance bipolar power supply integration available"
-      ]
-    },
+    optionalConfigs: [
+      "Precision pole caps", "Adjustable pole gap configurations", "Optical breadboard mounts", 
+      "Temperature monitoring", "Integrated Hall probes", "Remote current control", 
+      "Water recirculation systems", "Custom optical access geometries"
+    ]
   },
 
-  "bitter-magnet": {
+  // "bitter-magnet": {
+  //   category: "Electromagnets",
+  //   name: "Bitter Type Electromagnet",
+  //   subtitle: "(Air-Core DC Magnet)",
+  //   tagline: "High-Field Air-Core DC Magnet Systems for Precision Research and Industrial Applications.",
+  //   heroImage: "/images/bitter-magnet-hero.png", // Image 1 (Full system)
+  //   gallery: [
+  //     "/images/bitter-magnet-internal.png", // Image 2 (Cutaway view)
+  //     "/images/bitter-magnet-specs.png"     // Image 3 (Plates/Coils)
+  //   ],
+  //   overview: [
+  //     "Engineered for generating stable, high magnetic fields under continuous operation for advanced research environments.",
+  //     "Our Bitter type electromagnets apply advanced precision machining and thermally managed cooling solutions to handle exceptionally high current densities and mechanical stresses."
+  //   ],
+  //   applications: [
+  //     "Gyrotron Magnet Systems",
+  //     "High-Power Microwave & RF Research",
+  //     "Plasma Physics Experiments",
+  //     "Accelerator & Beamline Laboratories",
+  //     "Magnetic Field-Dependent Material Characterization"
+  //   ],
+  //   whyBitter: {
+  //     description: "Unlike conventional wire-wound solenoids, CryoNano Bitter magnets use stacked copper plates forming a helical current path:",
+  //     points: [
+  //       "Extremely High Current Density",
+  //       "Superior Heat Dissipation",
+  //       "Excellent Mechanical Strength",
+  //       "Scalable High-Field Architecture"
+  //     ]
+  //   },
+  //   // Using numerical labels for the diagram integration
+  //   systemArchitecture: [
+  //     { id: "1.1", title: "Copper Bitter Plates", desc: "Precision-machined copper plates forming the core helical current path." },
+  //     { id: "1.2", title: "Insulating Spacers", desc: "High-strength insulating spacers placed between plates." },
+  //     { id: "1.3", title: "Cooling Channels", desc: "Aligned channels allowing axial flow of de-ionized water." },
+  //     { id: "1.4", title: "Dual Coils (Series)", desc: "Dual concentric coils, series-connected for scalable high-field generation." }
+  //   ],
+  //   constructionDetails: [
+  //     "Precision-machined copper Bitter plates",
+  //     "High-strength insulating spacers",
+  //     "Helical current path geometry",
+  //     "Dual concentric coils, series-connected",
+  //     "High mechanical robustness under Lorentz forces"
+  //   ],
+  //   coolingSystem: [
+  //     "Axial De-ionized Water Cooling Architecture",
+  //     "Cooling through aligned plate channels",
+  //     "Typical inlet temperature ~10°C",
+  //     "Pressure up to 12 bar",
+  //     "Continuous-duty rated design"
+  //   ],
+  //   footers: [
+  //     "Engineered for High-Field Stability • Built for Continuous Operation",
+  //     "Advanced Thermal Engineering • Built for Continuous High-Current Operation",
+  //     "Research-Grade High-Field Performance • Custom Engineered Systems"
+  //   ],
+  //   technicalSpecifications: {
+  //     header: "Precision-engineered air-core DC Bitter magnet for stable high-field operation.",
+  //     coreParameters: [
+  //       { label: "Magnet Type", value: "Air-Core DC Bitter Electromagnet" },
+  //       { label: "Bore Diameter", value: "65 mm" },
+  //       { label: "Axial Length", value: "300 mm" },
+  //       { label: "Maximum Central Field", value: "Up to 1.1 Tesla" },
+  //       { label: "Field Profile", value: "Peak at center, symmetric axial decay" },
+  //       { label: "Coil Configuration", value: "Dual concentric coils, series connected" }
+  //     ],
+  //     electricCoolingParameters: [
+  //       { label: "Cooling Method", value: "De-ionized water cooling" },
+  //       { label: "Cooling Flow Direction", value: "Axial through aligned Bitter plate channels" },
+  //       { label: "Cooling Water Temperature", value: "~10 °C" },
+  //       { label: "Cooling Water Pressure", value: "Up to 12 bar" },
+  //       { label: "Operating Current", value: "~1000 A (application dependent)" },
+  //       { label: "Continuous Operation", value: "Yes" }
+  //     ]
+  //   }
+  // },
+
+"bitter-magnet": {
     category: "Electromagnets",
-    name: "Bitter Type Electromagnet",
-    subtitle: "(Air-Core DC Magnet)",
-    tagline: "High-Field Air-Core DC Magnet Systems for Precision Research and Industrial Applications.",
-    heroImage: "/images/bitter-magnet-hero.png", // Image 1 (Full system)
+    name: "Florida Bitter-Type High Field Electromagnet",
+    subtitle: "Ultra-high current air-core Bitter magnet system engineered for continuous high magnetic field operation and advanced scientific research.",
+    specStrip: [
+      "1.1 Tesla Central Field", "1000+ Ampere Operation", "50 kW Power System", 
+      "Bitter Plate Architecture", "Water-Cooled Copper Stack", "Large 65 mm Bore"
+    ],
+    heroImage: "/images/bitter-magnet-hero.png",
     gallery: [
-      "/images/bitter-magnet-internal.png", // Image 2 (Cutaway view)
-      "/images/bitter-magnet-specs.png"     // Image 3 (Plates/Coils)
+      "/images/bitter-magnet-cooling.png",
+      "/images/bitter-magnet-plates.png"
     ],
     overview: [
-      "Engineered for generating stable, high magnetic fields under continuous operation for advanced research environments.",
-      "Our Bitter type electromagnets apply advanced precision machining and thermally managed cooling solutions to handle exceptionally high current densities and mechanical stresses."
+      "The Florida Bitter-Type Electromagnet is a high-power air-core DC magnet system engineered for continuous high magnetic field generation in demanding scientific and industrial environments. Inspired by classic Florida Bitter magnet architecture, the system combines stacked copper Bitter plates, high-flow water cooling, and ultra-high current power delivery to achieve stable high magnetic fields with exceptional thermal performance.",
+      "The system follows the classic Bitter electromagnet design using stacked circular copper conducting plates separated by insulating spacers in a helical current path configuration. Unlike conventional wound coils, the Bitter plate architecture enables extremely high current densities and superior cooling efficiency for continuous high magnetic field generation.",
+      "Integrated water cooling channels pass directly through aligned holes in the copper plates to efficiently remove resistive heat generated by the ultra-high operating currents."
     ],
-    applications: [
-      "Gyrotron Magnet Systems",
-      "High-Power Microwave & RF Research",
-      "Plasma Physics Experiments",
-      "Accelerator & Beamline Laboratories",
-      "Magnetic Field-Dependent Material Characterization"
+    keyFeatures: [
+      { title: "Bitter Plate Technology", desc: "Stacked copper Bitter plates with helical current flow architecture optimized for high-field generation and thermal dissipation.", icon: "Layers" },
+      { title: "Ultra-High Current Operation", desc: "Designed for continuous operation at nearly 1000 A or higher using industrial-grade power electronics.", icon: "Zap" },
+      { title: "Large Bore Access", desc: "65 mm inner diameter provides large experimental access for beamlines, plasma systems, and scientific instrumentation.", icon: "Crosshair" },
+      { title: "High-Efficiency Water Cooling", desc: "Parallel cooling channels integrated directly into the Bitter plates provide efficient thermal extraction during full-power operation.", icon: "Droplets" },
+      { title: "Precision Field Generation", desc: "Generates up to 1.1 Tesla central magnetic field with symmetrical axial field distribution.", icon: "Activity" },
+      { title: "Industrial Power Electronics", desc: "IGBT-based regulated DC power supply with constant current operation and advanced protection systems.", icon: "Cpu" }
     ],
-    whyBitter: {
-      description: "Unlike conventional wire-wound solenoids, CryoNano Bitter magnets use stacked copper plates forming a helical current path:",
-      points: [
-        "Extremely High Current Density",
-        "Superior Heat Dissipation",
-        "Excellent Mechanical Strength",
-        "Scalable High-Field Architecture"
-      ]
+    specs: {
+      "Magnet Type": "Air-Core Bitter Electromagnet",
+      "Maximum Field": "1.1 Tesla",
+      "Inner Bore Diameter": "65 mm",
+      "Axial Length": "300 mm",
+      "Magnet Cooling": "High-flow water cooling",
+      "Cooling Method": "Parallel Bitter plate cooling channels",
+      "Operating Current": "~1000 A or higher",
+      "Maximum Power": "Up to 50 kW",
+      "Power Supply Type": "Constant Current DC Supply",
+      "Input Supply": "415 VAC, 3-Phase",
+      "Control Modes": "Local & Remote",
+      "Power Electronics": "IGBT Based"
     },
-    // Using numerical labels for the diagram integration
-    systemArchitecture: [
-      { id: "1.1", title: "Copper Bitter Plates", desc: "Precision-machined copper plates forming the core helical current path." },
-      { id: "1.2", title: "Insulating Spacers", desc: "High-strength insulating spacers placed between plates." },
-      { id: "1.3", title: "Cooling Channels", desc: "Aligned channels allowing axial flow of de-ionized water." },
-      { id: "1.4", title: "Dual Coils (Series)", desc: "Dual concentric coils, series-connected for scalable high-field generation." }
+    bitterTech: {
+      title: "Advanced Bitter Plate Construction",
+      layers: ["Precision copper Bitter plates", "High-strength insulating spacers", "Helical current conduction geometry", "Integrated axial cooling channels"],
+      enables: ["High magnetic field per unit energy", "Exceptional thermal management", "High scalability", "Continuous operation at extreme current densities"]
+    },
+    coolingSystem: {
+      title: "High-Flow Water Cooling Architecture",
+      desc: "The Bitter magnet employs direct axial water cooling through precision-aligned cooling holes within the copper plate stack.",
+      highlights: ["De-ionized water cooling", "High flow rate operation", "Efficient heat extraction", "Reduced thermal gradients", "Continuous full-power capability"],
+      params: ["Cooling Water Temperature: ~10°C", "High inlet pressure operation", "Parallel cooling channel design"]
+    },
+    powerSupply: {
+      title: "50 kW Regulated DC Power System",
+      desc: "The magnet system includes a heavy-duty industrial DC power supply optimized for ultra-high current electromagnet operation.",
+      features: ["Constant current regulation", "Voltage limiting mode", "Local and remote operation", "Oil-cooled transformer", "Oil-cooled rectifier assembly", "Industrial IGBT switching architecture"],
+      protection: ["Overtemperature protection", "Overcurrent protection", "Short circuit protection", "Input voltage monitoring", "Thermal fault shutdown"]
+    },
+    fieldPerformance: {
+      title: "Stable High-Field Generation",
+      generates: ["1.1 Tesla at the center axis", "Symmetrical axial field profile", "Stable continuous field operation", "Optimized field homogeneity"],
+      includes: ["Axial field profile graphs", "Magnetic flux visualization", "Thermal simulation renders", "Bitter plate current flow animations"]
+    },
+    engineeringDesign: {
+      title: "Built for Continuous High-Power Operation",
+      highlights: ["Air-core magnetic architecture", "Modular Bitter plate assembly", "High-current copper conduction", "Precision insulated stack design", "Industrial thermal management", "Heavy-duty mechanical structure"]
+    },
+    applications: [
+      "Gyrotron Systems", "Plasma Physics Research", "Accelerator Physics", "Magneto-Transport Experiments", 
+      "High-Field Spectroscopy", "Particle Beam Systems", "Magnetic Materials Research", "Fusion Research Systems", "Industrial Magnetic Testing"
     ],
-    constructionDetails: [
-      "Precision-machined copper Bitter plates",
-      "High-strength insulating spacers",
-      "Helical current path geometry",
-      "Dual concentric coils, series-connected",
-      "High mechanical robustness under Lorentz forces"
-    ],
-    coolingSystem: [
-      "Axial De-ionized Water Cooling Architecture",
-      "Cooling through aligned plate channels",
-      "Typical inlet temperature ~10°C",
-      "Pressure up to 12 bar",
-      "Continuous-duty rated design"
-    ],
-    footers: [
-      "Engineered for High-Field Stability • Built for Continuous Operation",
-      "Advanced Thermal Engineering • Built for Continuous High-Current Operation",
-      "Research-Grade High-Field Performance • Custom Engineered Systems"
-    ],
-    technicalSpecifications: {
-      header: "Precision-engineered air-core DC Bitter magnet for stable high-field operation.",
-      coreParameters: [
-        { label: "Magnet Type", value: "Air-Core DC Bitter Electromagnet" },
-        { label: "Bore Diameter", value: "65 mm" },
-        { label: "Axial Length", value: "300 mm" },
-        { label: "Maximum Central Field", value: "Up to 1.1 Tesla" },
-        { label: "Field Profile", value: "Peak at center, symmetric axial decay" },
-        { label: "Coil Configuration", value: "Dual concentric coils, series connected" }
-      ],
-      electricCoolingParameters: [
-        { label: "Cooling Method", value: "De-ionized water cooling" },
-        { label: "Cooling Flow Direction", value: "Axial through aligned Bitter plate channels" },
-        { label: "Cooling Water Temperature", value: "~10 °C" },
-        { label: "Cooling Water Pressure", value: "Up to 12 bar" },
-        { label: "Operating Current", value: "~1000 A (application dependent)" },
-        { label: "Continuous Operation", value: "Yes" }
-      ]
+    visualElements: [
+      "Exploded Bitter plate assembly", "Water flow simulation", "Magnetic field contour maps", 
+      "Current density visualizations", "High-current busbar renders", "Industrial cooling system animations"
+    ]
+  },
+
+
+
+
+//  "emc2t-2-magnet": {
+//     category: "Electromagnets",
+//     name: "EMC2T- 2 Tesla Variable Gap C-Frame Electromagnet",
+//     subtitle: "Advanced Coil Design & Precision Power Supply System",
+//     tagline: "Optimized Magnet Architecture for Cryogenic and Precision Measurement Systems",
+//     heroImage: "/images/emc2t-hero.png", 
+//     overview: [
+//       "The EMC2T is a compact 2 Tesla variable-gap C-frame dipole electromagnet engineered for laboratory-scale magnetic field experiments. Featuring water-cooled coils and a wide, adjustable pole gap, it enables stable, high-field operation while accommodating cryostats and auxiliary experimental hardware.",
+//       "Ideal for condensed-matter, low-temperature, and spin-based research, the EMC2T provides reliable 2 Tesla field generation for a wide range of magneto-transport and magneto-optical studies.",
+//       "Optimized for seamless laboratory integration, the EMC2T brings robust and flexible magnet design to precision cryogenic, optical, and transport experiments."
+//     ],
+//     keyFeatures: {
+//       header: "Advanced C-Frame Dipole and Precision Coil Design",
+//       features: [
+//         { title: "2 Tesla Field Strength", desc: "Generates stable magnetic fields up to 2 T for demanding laboratory experiments." },
+//         { title: "Variable Pole Gap", desc: "Adjustable gap accommodates samples, cryostats, and optical access requirements." },
+//         { title: "C-Frame Dipole Geometry", desc: "Open mechanical design allows easy sample access and integration of ancillary equipment." },
+//         { title: "Water-Cooled Coils", desc: "Efficient thermal management enables continuous operation at high fields." },
+//         { title: "Compact Footprint", desc: "Optimized for small-scale laboratory environments without compromising performance." },
+//         { title: "Wide Experimental Compatibility", desc: "Supports electrical, optical, and transport measurements under applied magnetic fields." }
+//       ]
+//     },
+//     magnetDesign: {
+//       header: "Robust Variable-Gap Dipole Architecture",
+//       components: [
+//         { id: "1.1", title: "C-Frame Geometry", desc: "Open architecture provides unobstructed access to the sample region and simplifies experimental integration." },
+//         { id: "1.2", title: "Variable Pole Gap", desc: "Wide adjustable gap accommodates cryostats, optical components and transport measurement setups." },
+//         { id: "1.3", title: "Precision Pole Faces", desc: "Machined pole surfaces ensure stable and uniform magnetic field distribution within the experimental region." },
+//         { id: "1.4", title: "Water-Cooled Coils", desc: "Thermally stabilized copper coils enable reliable continuous high-field operation." }
+//       ]
+//     },
+//     experimentalIntegration: {
+//       header: "Optimized for Laboratory Integration",
+//       features: [
+//         { title: "Cryostat Compatibility", desc: "The EMC2T accommodates low-temperature experimental systems positioned directly within the magnet gap." },
+//         { title: "Optical Access", desc: "Open C-frame structure allows laser beams and optical diagnostics to access the sample region." },
+//         { title: "Transport Measurement Ready", desc: "Supports magneto-transport experiments such as Hall and spin Hall measurements." },
+//         { title: "Flexible Laboratory Installation", desc: "Suitable for both bench-top and floor-mounted experimental platforms." }
+//       ]
+//     },
+//     technicalSpecifications: {
+//       header: "Precisely Engineered C-Frame Dipole Magnet",
+//       data: {
+//         "Magnetic Field": "Up to 2 Tesla",
+//         "Pole Gap": "0–50 mm (variable)",
+//         "Pole Face Area": "25 × 25 mm",
+//         "Pole Shape": "Square",
+//         "Pole Material": "Low-carbon steel",
+//         "Cooling": "Water-cooled copper coils",
+//         "Max Continuous Current": "140 A (80 V)",
+//         "Sample Region": "Compatible with Ø2–Ø25 mm samples in cryostats",
+//         "Mass": "60 kg (magnet only)"
+//       }
+//     },
+//     applications: [
+//       "Spintronics Research",
+//       "Quantum Materials Testing",
+//       "Magneto-Transport Measurements",
+//       "Magneto-Optical Studies",
+//       "Cryogenic Device Evaluation"
+//     ],
+//     footers: [
+//       "High-Field Capable • Variable Pole Gap • Precision Laboratory Instrument",
+//       "Precise Magnetic Control • Broad Experimental Integration • Compact Laboratory Instrument"
+//     ]
+//   },
+
+"emc2t-2-magnet": {
+  category: "Electromagnets",
+  name: "2 Tesla Research Electromagnet System",
+  subtitle: "High-uniformity laboratory electromagnet with optical access, adjustable pole gap, and regenerative 4‑quadrant bipolar power supply.",
+  tagline: "Compact 2 Tesla variable‑gap C‑frame dipole electromagnet engineered for laboratory‑scale magnetic field experiments.",
+  heroImage: "/images/emc2t-hero.png",
+
+  overview: [
+    "The EMC2T Research Electromagnet is a compact high-power laboratory magnet system engineered for precision magnetic field generation up to 2 Tesla with wide optical access compatibility. Designed for advanced research environments, the system combines high magnetic field performance, adjustable pole geometry, optical accessibility, and a regenerative 4-quadrant bipolar power supply for smooth polarity reversal and stable operation.",
+    "The platform is optimized for magneto‑transport measurements, Hall effect studies, Raman and magneto‑optical experiments, cryostat integration, materials characterization, and quantum materials research."
+  ],
+
+  keySpecs: [
+    { label: "2 Tesla Maximum Field", icon: "Magnet" },
+    { label: "20 mm Pole Separation", icon: "Maximize2" },
+    { label: "48,000 Ampere-Turns", icon: "Zap" },
+    { label: "Optical Access Compatible", icon: "Eye" },
+    { label: "Water-Cooled Coils", icon: "Droplets" },
+    { label: "Bipolar 4-Quadrant Supply", icon: "Settings" }
+  ],
+
+  productOverview: {
+    title: "Precision Magnetic Field Generation",
+    description: "The EMC2T is a high-power compact electromagnet designed for laboratory-scale scientific experiments requiring stable and adjustable magnetic fields. The system uses high-current water-cooled copper coils combined with low-carbon steel magnetic structures to achieve high saturation performance with low magnetic remanence.",
+    suitableFor: [
+      "Cryostat integration",
+      "Optical spectroscopy",
+      "Magneto-optical measurements",
+      "Transport measurements",
+      "Magnetic resonance experiments"
+    ]
+  },
+
+  keyFeatures: [
+    { title: "2 Tesla Magnetic Field", desc: "Generates up to 2.0 Tesla axial magnetic field at 20 mm pole separation with 40 mm pole face geometry.", icon: "Magnet" },
+    { title: "Adjustable Pole Gap", desc: "Continuously adjustable pole separation from 5 mm to 50 mm for flexible experimental geometries and cryostat integration.", icon: "Maximize2" },
+    { title: "Optical Access Compatibility", desc: "Integrated optical access holes within the pole structure enable spectroscopy and optical experiments directly inside the magnetic field region.", icon: "Eye" },
+    { title: "Water-Cooled High Current Coils", desc: "High-efficiency copper conductor coils with integrated cooling channels support continuous operation up to 50 A.", icon: "Droplets" },
+    { title: "4-Quadrant Bipolar Power Supply", desc: "State-of-the-art regenerative power supply enables seamless polarity reversal through zero field operation without switching transients.", icon: "Settings" },
+    { title: "High Field Uniformity", desc: "Optimized pole geometry provides stable and uniform magnetic fields for precision measurements and characterization experiments.", icon: "Activity" }
+  ],
+
+  technicalSpecs: {
+    header: "Technical Specifications",
+    data: {
+      "Maximum Magnetic Field": "2 Tesla",
+      "Pole Face Diameter": "40 mm",
+      "Pole Gap Range": "5 – 50 mm",
+      "Coil Gap": "140 mm",
+      "Maximum Current": "50 A",
+      "Maximum Voltage": "±50 V",
+      "Maximum Power": "~2.5 kW",
+      "Coil Resistance": "0.45 Ω per coil",
+      "Cooling Method": "Water Cooling",
+      "Cooling Flow Rate": "8–10 L/min",
+      "Ampere-Turns": "48,000",
+      "Magnet Weight": "Approx. 530 kg",
+      "Power Supply Weight": "Approx. 35 kg",
+      "Power Input": "415 VAC, 3-Phase",
+      "Operating Mode": "Bipolar 4-Quadrant"
     }
   },
 
-
-
-
- "emc2t-2-magnet": {
-    category: "Electromagnets",
-    name: "EMC2T- 2 Tesla Variable Gap C-Frame Electromagnet",
-    subtitle: "Advanced Coil Design & Precision Power Supply System",
-    tagline: "Optimized Magnet Architecture for Cryogenic and Precision Measurement Systems",
-    heroImage: "/images/emc2t-hero.png", 
-    overview: [
-      "The EMC2T is a compact 2 Tesla variable-gap C-frame dipole electromagnet engineered for laboratory-scale magnetic field experiments. Featuring water-cooled coils and a wide, adjustable pole gap, it enables stable, high-field operation while accommodating cryostats and auxiliary experimental hardware.",
-      "Ideal for condensed-matter, low-temperature, and spin-based research, the EMC2T provides reliable 2 Tesla field generation for a wide range of magneto-transport and magneto-optical studies.",
-      "Optimized for seamless laboratory integration, the EMC2T brings robust and flexible magnet design to precision cryogenic, optical, and transport experiments."
-    ],
-    keyFeatures: {
-      header: "Advanced C-Frame Dipole and Precision Coil Design",
-      features: [
-        { title: "2 Tesla Field Strength", desc: "Generates stable magnetic fields up to 2 T for demanding laboratory experiments." },
-        { title: "Variable Pole Gap", desc: "Adjustable gap accommodates samples, cryostats, and optical access requirements." },
-        { title: "C-Frame Dipole Geometry", desc: "Open mechanical design allows easy sample access and integration of ancillary equipment." },
-        { title: "Water-Cooled Coils", desc: "Efficient thermal management enables continuous operation at high fields." },
-        { title: "Compact Footprint", desc: "Optimized for small-scale laboratory environments without compromising performance." },
-        { title: "Wide Experimental Compatibility", desc: "Supports electrical, optical, and transport measurements under applied magnetic fields." }
-      ]
-    },
-    magnetDesign: {
-      header: "Robust Variable-Gap Dipole Architecture",
-      components: [
-        { id: "1.1", title: "C-Frame Geometry", desc: "Open architecture provides unobstructed access to the sample region and simplifies experimental integration." },
-        { id: "1.2", title: "Variable Pole Gap", desc: "Wide adjustable gap accommodates cryostats, optical components and transport measurement setups." },
-        { id: "1.3", title: "Precision Pole Faces", desc: "Machined pole surfaces ensure stable and uniform magnetic field distribution within the experimental region." },
-        { id: "1.4", title: "Water-Cooled Coils", desc: "Thermally stabilized copper coils enable reliable continuous high-field operation." }
-      ]
-    },
-    experimentalIntegration: {
-      header: "Optimized for Laboratory Integration",
-      features: [
-        { title: "Cryostat Compatibility", desc: "The EMC2T accommodates low-temperature experimental systems positioned directly within the magnet gap." },
-        { title: "Optical Access", desc: "Open C-frame structure allows laser beams and optical diagnostics to access the sample region." },
-        { title: "Transport Measurement Ready", desc: "Supports magneto-transport experiments such as Hall and spin Hall measurements." },
-        { title: "Flexible Laboratory Installation", desc: "Suitable for both bench-top and floor-mounted experimental platforms." }
-      ]
-    },
-    technicalSpecifications: {
-      header: "Precisely Engineered C-Frame Dipole Magnet",
-      data: {
-        "Magnetic Field": "Up to 2 Tesla",
-        "Pole Gap": "0–50 mm (variable)",
-        "Pole Face Area": "25 × 25 mm",
-        "Pole Shape": "Square",
-        "Pole Material": "Low-carbon steel",
-        "Cooling": "Water-cooled copper coils",
-        "Max Continuous Current": "140 A (80 V)",
-        "Sample Region": "Compatible with Ø2–Ø25 mm samples in cryostats",
-        "Mass": "60 kg (magnet only)"
-      }
-    },
-    applications: [
-      "Spintronics Research",
-      "Quantum Materials Testing",
-      "Magneto-Transport Measurements",
-      "Magneto-Optical Studies",
-      "Cryogenic Device Evaluation"
-    ],
-    footers: [
-      "High-Field Capable • Variable Pole Gap • Precision Laboratory Instrument",
-      "Precise Magnetic Control • Broad Experimental Integration • Compact Laboratory Instrument"
+  magneticFieldPerformance: {
+    title: "High-Uniformity Magnetic Field",
+    description: "The EMC2T is engineered to provide highly stable magnetic fields with optimized field uniformity across the pole region.",
+    highlights: [
+      "2 Tesla at 20 mm pole separation",
+      "Stable field response",
+      "Adjustable magnetic geometry",
+      "Wide operating current range",
+      "Precision field control"
     ]
   },
+
+  powerSupply: {
+    title: "Regenerative Bipolar Magnet Power Supply",
+    features: [
+      "Bipolar output operation",
+      "Seamless polarity transition",
+      "Constant current / constant voltage modes",
+      "Low ripple and noise",
+      "Regenerative energy recovery",
+      "High efficiency up to 91%",
+      "IGBT-based architecture"
+    ],
+    protections: [
+      "Overcurrent protection",
+      "Overvoltage shutdown",
+      "Overtemperature protection",
+      "Fan failure detection",
+      "Coil kickback protection"
+    ]
+  },
+
+  coolingSystem: {
+    title: "High-Efficiency Water Cooling",
+    description: "The magnet uses integrated copper tube cooling channels electrically isolated from the coils for safe and reliable continuous operation.",
+    features: [
+      "Continuous high-current operation",
+      "Reduced thermal drift",
+      "Stable coil temperature",
+      "Corrosion-resistant cooling architecture",
+      "Recirculating chiller compatible"
+    ]
+  },
+
+  applications: [
+    "Hall Effect Measurements",
+    "Spin Hall Effect Studies",
+    "Magneto-Resistance Experiments",
+    "Magnetic Susceptibility Studies",
+    "Magneto-Caloric Measurements",
+    "Magneto-Optical Characterization",
+    "Magnetic Resonance Experiments",
+    "Quantum Materials Research",
+    "Semiconductor Characterization",
+    "Cryogenic Magneto-Transport"
+  ],
+
+  safetyEngineering: {
+    title: "Engineered for Laboratory Safety",
+    features: [
+      "Grounded chassis architecture",
+      "Overtemperature monitoring",
+      "High-voltage protection",
+      "Cooling monitoring",
+      "Strong magnetic field warning compliance",
+      "Industrial-grade construction"
+    ]
+  },
+
+  mechanicalDesign: {
+    title: "Heavy-Duty Scientific Magnet Structure",
+    materials: [
+      "Low-carbon steel yoke",
+      "Precision magnetic pole cores",
+      "Copper conductor coils",
+      "Water-cooled copper tubing"
+    ],
+    highlights: [
+      "Adjustable pole system",
+      "Wide yoke geometry",
+      "Optical access ports",
+      "Cryostat compatibility",
+      "Compact laboratory footprint"
+    ]
+  },
+  
+  footerCTA: {
+    title: "Ready for High-Field Scientific Research?",
+    description: "Precision-engineered electromagnet systems for advanced materials science, quantum research, spectroscopy, and cryogenic experimentation."
+  }
+},
   // --------------------------------------------
   // SERVICES SECTION 
   // --------------------------------------------
