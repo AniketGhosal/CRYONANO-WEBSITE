@@ -106,6 +106,7 @@ import ResearchPublicationsPage from "./pages/ResearchPublicationsPage";
 import { ArchivedProductsPage } from './pages/ArchivedProductsPage'; 
 import { ApplicationNotesPage } from './pages/ApplicationNotesPage'; 
 import QuantumVoltPage from "./pages/QuantumVoltPage";
+import DACSystemPage from "./pages/DACSystemPage";
 
 const queryClient = new QueryClient();
 
@@ -122,6 +123,7 @@ const AnimatedRoutes = () => {
         <Route path="/products/quantum-volt" element={<QuantumVoltPage />} />
         <Route path="/products/breakout-box" element={<CryoConnectBreakoutBoxPage />} />
         <Route path="/products/cryo-clean" element={<CryoCleanFiltersPage />} />
+        <Route path="/products/DAC-system" element={<DACSystemPage />} />
         <Route path="/products/nano-stage" element={<CryogenicNanoStagePage />} />
         <Route path="/products/2d-transfer-system" element={<TwoDTransferSystemPage />} />
         <Route path="/products/psm-100" element={<ProbeStationPage />} />

@@ -867,3 +867,4 @@ const MicroscopeMotorisedController = () => {
 };
 
 export default MicroscopeMotorisedController;
+

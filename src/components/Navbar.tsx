@@ -394,6 +394,7 @@ const productCategories = [
       { name: "QuantumVibe – Isolated Voltage Source DAC", path: "/products/quantum-volt" },
       { name: "CryoConnect – Cryostat Breakout Box", path: "/products/breakout-box" },
       { name: "CryoClean – Cryogenic RF Low-Pass Filters", path: "/products/cryo-clean" },
+      { name: "DACsys™ Cryogenic Data Acquisition System", path: "/products/DAC-system" },
     ],
   },
   {
