@@ -412,7 +412,7 @@ export function Footer() {
                 <div>
                   <p className="text-white font-bold text-sm mb-1">Kolkata (HQ)</p>
                   <p className="text-xs text-slate-400 leading-relaxed">
-                    1st Floor, WTL Building, BP-5, BP Block, Sector V, Kolkata, WB 700091
+                    WTL Building ,1st Floor, , BP-5, BP Block, Sector V, Bidhannagar, Kolkata, West Bengal 700091
                   </p>
                 </div>
               </div>
@@ -422,7 +422,7 @@ export function Footer() {
                 <div>
                   <p className="text-white font-bold text-sm mb-1">Bangalore Office</p>
                   <p className="text-xs text-slate-400 leading-relaxed">
-                    [Building Name], [Street Name], [Tech Park], Bangalore, KA 560001
+                    GMN Complex ,2nd Floor, 5th ‘A’ Cross, 1st Block, HRBR Layout, Babusapalya, Banaswadi, Outer Ring Road, Bangalore-560043
                   </p>
                 </div>
               </div>

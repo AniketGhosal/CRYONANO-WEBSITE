@@ -740,6 +740,31 @@ const ApplicationsExpandableGrid = ({ apps }: { apps: string[] }) => {
 // ==========================================
 // VISUAL REFERENCE – 3-Column Image Gallery
 // ==========================================
+// const VisualReference = ({ gallery }: { gallery: any[] }) => {
+//   return (
+//     <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+//       {gallery.map((img: any, idx: number) => (
+//         <motion.div
+//           key={idx}
+//           initial={{ opacity: 0, y: 20 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           viewport={{ once: true }}
+//           transition={{ delay: idx * 0.1 }}
+//           whileHover={{ scale: 1.02, y: -6 }}
+//           className="group bg-white border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+//         >
+//           <div className="aspect-square overflow-hidden bg-slate-100">
+//             <img src={img.url} alt={img.caption} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+//           </div>
+//           <div className="p-4 text-center">
+//             <p className="text-sm font-bold text-[#0A2647]">{img.caption}</p>
+//           </div>
+//         </motion.div>
+//       ))}
+//     </div>
+//   );
+// };
+
 const VisualReference = ({ gallery }: { gallery: any[] }) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -751,12 +776,17 @@ const VisualReference = ({ gallery }: { gallery: any[] }) => {
           viewport={{ once: true }}
           transition={{ delay: idx * 0.1 }}
           whileHover={{ scale: 1.02, y: -6 }}
-          className="group bg-white border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+          className="group bg-white border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
         >
-          <div className="aspect-square overflow-hidden bg-slate-100">
-            <img src={img.url} alt={img.caption} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          {/* Changed aspect-square to a highly compliant full width flex height window using object-contain layout positioning */}
+          <div className="w-full h-56 bg-slate-50 flex items-center justify-center overflow-hidden relative p-4 border-b border-slate-100">
+            <img 
+              src={img.url} 
+              alt={img.caption} 
+              className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500" 
+            />
           </div>
-          <div className="p-4 text-center">
+          <div className="p-4 text-center mt-auto bg-white">
             <p className="text-sm font-bold text-[#0A2647]">{img.caption}</p>
           </div>
         </motion.div>
@@ -881,7 +911,9 @@ export default function EMC2TMagnetPage() {
               initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }}
               className="lg:col-span-5 flex justify-center w-full"
             >
-              <div className="w-full max-w-[550px] aspect-square rounded-[2rem] bg-gradient-to-br from-[#0F294D] to-[#0A1B35] border border-slate-700 p-2 shadow-2xl relative overflow-hidden group">
+              {/* <div className="w-full max-w-[550px] aspect-square rounded-[2rem] bg-gradient-to-br from-[#0F294D] to-[#0A1B35] border border-slate-700 p-2 shadow-2xl relative overflow-hidden group"> */}
+              {/* Removed forced aspect-square and set h-auto with a minimum layout height fallback for responsive scaling */}
+<div className="w-full max-w-[550px] h-auto min-h-[350px] md:min-h-[420px] rounded-[2rem] bg-gradient-to-br from-[#0F294D] to-[#0A1B35] border border-slate-700 p-2 shadow-2xl relative overflow-hidden group">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={currentImage}
@@ -893,7 +925,9 @@ export default function EMC2TMagnetPage() {
                   >
                     {product.gallery && product.gallery[currentImage] ? (
                       <>
-                        <img src={product.gallery[currentImage].url} alt={product.gallery[currentImage].caption} className="w-full h-full object-cover opacity-85 mix-blend-screen" />
+                        {/* <img src={product.gallery[currentImage].url} alt={product.gallery[currentImage].caption} className="w-full h-full object-cover opacity-85 mix-blend-screen" /> */}
+                        {/* Swapped h-full to h-auto and object-cover to object-contain, padding bottom to clear text block labels safely */}
+<img src={product.gallery[currentImage].url} alt={product.gallery[currentImage].caption} className="w-full h-auto max-h-[380px] object-contain opacity-85 mix-blend-screen p-4 pb-24 mx-auto" />
                         <div className="absolute bottom-6 left-6 right-6 bg-black/60 backdrop-blur-md border border-white/10 p-4 rounded-lg">
                            <p className="text-sm font-bold text-white uppercase tracking-wider">{product.gallery[currentImage].caption}</p>
                         </div>

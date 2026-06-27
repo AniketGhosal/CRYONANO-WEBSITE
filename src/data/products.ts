@@ -3021,9 +3021,9 @@ export const productsData: Record<string, any> = {
   ],
 
   gallery: [
-    { url: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=800", caption: "Optical Table Setup" },
-    { url: "https://images.unsplash.com/photo-1581092335397-9583eb92d232?q=80&w=800", caption: "Low-Profile Coil Geometry" },
-    { url: "https://images.unsplash.com/photo-1597733336794-12d05021d510?q=80&w=800", caption: "Spectroscopy Integration" }
+    { url: "/images/Electromagnets/spectroscopy-magnet/image1.jpeg", caption: "Optical Table Setup" },
+    { url: "/images/Electromagnets/spectroscopy-magnet/image2.jpeg", caption: "Low-Profile Coil Geometry" },
+    { url: "/images/Electromagnets/spectroscopy-magnet/image3.jpg", caption: "Spectroscopy Integration" }
   ],
 
   cta: {
@@ -3360,9 +3360,9 @@ export const productsData: Record<string, any> = {
   ],
 
   gallery: [
-    { url: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=800", caption: "Stacked Circular Copper Conducting Plates" },
-    { url: "https://images.unsplash.com/photo-1558494949-ef010cutoff?q=80&w=800", caption: "High-Flow Water Cooling Layout" },
-     { url: "https://images.unsplash.com/photo-1581092335397-9583eb92d232?q=80&w=800", caption: "Bitter Plate Assembly & Magnetic Core" }
+    { url: "/images/Electromagnets/bitter-magnet/image1.png", caption: "Stacked Circular Copper Conducting Plates" },
+    { url: "/images/Electromagnets/bitter-magnet/image2.jpeg", caption: "High-Flow Water Cooling Layout" },
+     { url: "/images/Electromagnets/bitter-magnet/image3.jpeg", caption: "Bitter Plate Assembly & Magnetic Core" }
   ],
 
   cta: {
@@ -3762,9 +3762,9 @@ export const productsData: Record<string, any> = {
   ],
 
   gallery: [
-    { url: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=800", caption: "EMC2T Research Electromagnet" },
-    { url: "https://images.unsplash.com/photo-1597733336794-12d05021d510?q=80&w=800", caption: "4-Quadrant Power Supply" },
-    { url: "https://images.unsplash.com/photo-1581092335397-9583eb92d232?q=80&w=800", caption: "Water-Cooled Coil Assembly" }
+    { url: "/images/Electromagnets/emc2t-2-magnet/image1.jpeg", caption: "EMC2T Research Electromagnet" },
+    { url: "/images/Electromagnets/emc2t-2-magnet/image2.jpg", caption: "4-Quadrant Power Supply" },
+    { url: "/images/Electromagnets/emc2t-2-magnet/image3.jpeg", caption: "Water-Cooled Coil Assembly" }
   ],
 
   cta: {

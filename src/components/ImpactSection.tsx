@@ -752,7 +752,7 @@ export function ImpactSection() {
           {/* --- CREDENTIALS & IMPACT --- */}
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="font-display text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">
-              Credentials & <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-500">Impact</span>
+              Credentials & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-600">Impact</span>
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed">
               Trusted by leading research institutions worldwide to deliver uncompromising precision.

@@ -395,7 +395,7 @@ export function ProductCategories() {
             Core Capabilities
           </div>
           <h2 className="font-display text-4xl lg:text-5xl font-extrabold text-foreground mb-4 tracking-tight">
-            Engineered for <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-500">Extremes</span>
+            Engineered for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-600">Extrems</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl md:mx-auto leading-relaxed">
             From stabilizing fragile qubits to powering industrial automation, our modular hardware architecture integrates seamlessly into your most critical workflows.
